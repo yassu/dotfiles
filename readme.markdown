@@ -3,7 +3,7 @@
 ```
 $ git clone https://github.com/yassu/dotfiles
 $ cd dotfiles
-$ git clone https://github.com/yassu/private
+$ git clone {repo-url}
 ```
 
 してから dotfiles/にある必要なファイル, privateにあるファイルを~/.{filename}
