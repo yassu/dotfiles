@@ -228,7 +228,7 @@ function! g:ToggleFolding()
         setlocal foldcolumn=2
     endif
 endfunction
-setlocal foldcolumn=0
+set foldcolumn=0
 nmap <leader>f :call g:ToggleFolding()<cr>
 
 if exists('&ambiwidth')
@@ -242,8 +242,8 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/swp
 
 set expandtab
-setlocal colorcolumn=80
-setlocal textwidth=80
+set colorcolumn=80
+set textwidth=80
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
