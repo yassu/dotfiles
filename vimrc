@@ -220,8 +220,7 @@ end
 set statusline+=:[%p%%]
 set incsearch
 set foldmethod=marker
-autocmd FileType tex set foldcolumn=2
-autocmd FileType vim set foldcolumn=2
+set foldcolumn=2
 if exists('&ambiwidth')
     set ambiwidth=double
 endif
