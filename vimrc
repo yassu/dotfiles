@@ -168,7 +168,6 @@ nmap <Space>td :VimFiler -tab -simple -winwidth=35 -no-quit -project ~/Dropbox/ 
 
 
 set background=dark
-let use_twillight = 0
 if (v:version >= 800 && dein#tap('twilight')) ||
         \ (v:version < 800 && neobundle#tap('twilight'))
     colorscheme twilight
