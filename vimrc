@@ -193,10 +193,6 @@ autocmd BufNewFile,BufRead *.md setfiletype markdown
 autocmd BufNewFile,BufRead *.mkd setfiletype markdown
 " }}}
 
-" tex {{{
-let tex_conceal = ''
-" }}}
-
 " json {{{
 augroup Setting-Json
   autocmd!
@@ -244,6 +240,7 @@ set softtabstop=4
 set shiftwidth=4
 
 " tex {{{
+let tex_conceal = ''
 augroup Setting-Tex
   autocmd!
 
