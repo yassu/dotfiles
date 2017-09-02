@@ -1,0 +1,16 @@
+.DS_Store
+
+.vimsessions/
+.lcvimrc
+.local.vimrc
+gyazo/
+Session.vim
+vim/sessions
+vim/session
+
+.virtualenvs
+**/tags.lock
+**/tags
+
+config/fish/conf.d/
+config/amf/

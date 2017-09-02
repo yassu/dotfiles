@@ -1,0 +1,8 @@
+// 既定の設定を上書きするには、このファイル内に設定を挿入します
+{
+      "editor.renderWhitespace": "all",
+
+      // Tabをスペース4個に置き換える
+      "editor.tabSize": 4,
+      "editor.insertSpaces": true
+}

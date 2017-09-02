@@ -1,0 +1,21 @@
+{
+  "_": {
+    "out_log": true,
+    "play_bgm": true,
+    "ring_bell": true,
+    "bell_sound": ".clock/music/default_bell.wav",
+    "bgm_filename": ".clock/music/ticking.wav",
+    "force_to_use_task": true
+  },
+  "job": {
+    "title": "Pomodoro Job",
+    "message": "Pomodoro Job is finished.",
+    "time": ["25m"]
+  },
+  "rest": {
+    "title": "Pomodoro Rest",
+    "message": "Rest is finished.",
+    "time": ["5m"]
+  }
+}
+

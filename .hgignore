@@ -1,0 +1,21 @@
+syntax: glob
+
+*.user
+
+vim/view/
+vim/.junk/
+vim/memo/
+vim/vim
+vim/colors/hydrangea.vim
+vim/ftplugin/go.vim
+vim/bin
+vim/bundle
+vim/spell
+vim/swp
+vim/undo
+vim/dein
+vim/.netrwhist
+
+config/fish/fishd.*
+
+pypirc

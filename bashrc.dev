@@ -1,0 +1,3 @@
+alias my_clock='python ~/dev/MyClock/my_clock/my_clock.py'
+alias clock='python ~/dev/MyClock/my_clock/my_clock.py -V'
+

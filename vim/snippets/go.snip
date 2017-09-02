@@ -1,0 +1,28 @@
+snippet     main
+abbr        package main ...
+alias       main
+options     head
+	package main
+
+	import "fmt"
+
+	func main() {
+		${0}
+	}
+
+snippet pack
+abbr    package ...
+options word
+	package ${0}
+
+snippet imp
+abbr    import
+options word
+	import ${0}
+
+snippet     tfun
+abbr        func ...(t *testing.T) { ... }
+options     head
+  func ${1:fname}(t *testing.T) {
+    ${0:TARGET:return }
+  }

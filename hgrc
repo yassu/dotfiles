@@ -1,0 +1,9 @@
+%include ~/.hgrc.user
+[ui]
+editor = vim
+ignore = ~/.hgignore
+[alias]
+glog = log --template '{node|short} | {date|isodatesec} | {author|user}: {desc|strip|firstline}\n'
+cout=checkout
+[extensions]
+graphlog =
