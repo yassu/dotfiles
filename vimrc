@@ -29,11 +29,11 @@ if v:version >= 800 " {{{
     call dein#add('vim-scripts/twilight')
     call dein#add('lambdalisue/vim-gita', {
         \ 'on_cmd': 'Gita',
-    \})
+    \ })
     call dein#add('w0rp/ale')
     let g:ale_linters = {
         \ 'python': ['flake8'],
-    \}
+    \ }
     call dein#add('Shougo/vimfiler')
     call dein#add('Shougo/vimproc.vim', {
         \ 'build': {
@@ -94,18 +94,18 @@ endif " }}}
 autocmd BufRead,BufNewFile *_test.py set filetype=python.test
 let g:quickrun_config = {}
 let g:quickrun_config['python.test'] = {
-    \'command': 'nosetests',
-    \'hook/shebang/enable': 0,
-\}
+    \ 'command': 'nosetests',
+    \ 'hook/shebang/enable': 0,
+\ }
 let g:quickrun_config['markdown'] = {
-    \'command': 'shiba',
-    \'cmdopt': '--detach',
-    \'hook/shebang/enable': 0,
-\}
+    \ 'command': 'shiba',
+    \ 'cmdopt': '--detach',
+    \ 'hook/shebang/enable': 0,
+\ }
 let g:quickrun_config['yaml'] = {
-    \'command': 'yamllint',
-    \'hook/shebang/enable': 0,
-\}
+    \ 'command': 'yamllint',
+    \ 'hook/shebang/enable': 0,
+\ }
 " }}}
 
 " unite {{{
@@ -140,13 +140,6 @@ nmap <leader>mg :MemoGrep<cr>
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 "set snippet file dir
 let g:neosnippet#snippets_directory='~/.vim/snippets'
 " }}}
@@ -254,8 +247,8 @@ set shiftwidth=4
 augroup Setting-Tex
   autocmd!
 
+  autocmd FileType tex setlocal textwidth=99
   autocmd FileType tex setlocal colorcolumn=100
-  autocmd FileType tex setlocal textwidth=100
   autocmd FileType tex setlocal tabstop=2
   autocmd FileType tex setlocal softtabstop=2
   autocmd FileType tex setlocal shiftwidth=2
@@ -266,7 +259,8 @@ augroup END
 augroup Setting-Html
   autocmd!
 
-  autocmd FileType html setlocal textwidth=100
+  autocmd FileType html setlocal textwidth=99
+  autocmd FileType html setlocal colorcolumn=100
   autocmd FileType html setlocal tabstop=2
   autocmd FileType html setlocal softtabstop=2
   autocmd FileType html setlocal shiftwidth=2
@@ -277,7 +271,8 @@ augroup END
 augroup Setting-Yaml
   autocmd!
 
-  autocmd FileType yaml setlocal textwidth=100
+  autocmd FileType yaml setlocal textwidth=99
+  autocmd FileType yaml setlocal colorcolumn=100
   autocmd FileType yaml setlocal softtabstop=2
   autocmd FileType yaml setlocal shiftwidth=2
 augroup END
@@ -287,7 +282,8 @@ augroup END
 augroup Setting-PlantUML
   autocmd!
 
-  autocmd FileType plant setlocal textwidth=100
+  autocmd FileType plant setlocal textwidth=99
+  autocmd FileType plant setlocal colorcolumn=100
   autocmd FileType plant setlocal tabstop=2
   autocmd FileType plant setlocal softtabstop=2
   autocmd FileType plant setlocal shiftwidth=2
@@ -298,11 +294,11 @@ augroup END
 augroup Setting-Python
   autocmd!
 
-  autocmd FileType python,python.test setlocal textwidth=80
-  autocmd FileType python,python.test  setlocal tabstop=4
+  autocmd FileType python,python.test setlocal textwidth=79
+  autocmd FileType python,python.test setlocal colorcolumn=80
+  autocmd FileType python,python.test setlocal tabstop=4
   autocmd FileType python,python.test setlocal softtabstop=4
   autocmd FileType python,python.test setlocal shiftwidth=4
-  autocmd FileType python,python.test setlocal colorcolumn=80
 augroup END
 " }}}
 
@@ -310,8 +306,8 @@ augroup END
 augroup Setting-Ruby
   autocmd!
 
+  autocmd FileType ruby setlocal textwidth=79
   autocmd FileType ruby setlocal colorcolumn=80
-  autocmd FileType ruby setlocal textwidth=80
   autocmd FileType ruby setlocal tabstop=2
   autocmd FileType ruby setlocal softtabstop=2
   autocmd FileType ruby setlocal shiftwidth=2
@@ -322,11 +318,11 @@ augroup END
 augroup Setting-Php
   autocmd!
 
-  autocmd FileType php setlocal textwidth=80
+  autocmd FileType php setlocal textwidth=79
+  autocmd FileType php setlocal colorcolumn=80
   autocmd FileType php setlocal tabstop=4
   autocmd FileType php setlocal softtabstop=4
   autocmd FileType php setlocal shiftwidth=4
-  autocmd FileType php setlocal colorcolumn=80
 augroup END
 " }}}
 
@@ -334,8 +330,8 @@ augroup END
 augroup Setting-Rust
   autocmd!
 
-  autocmd FileType rust setlocal colorcolumn=79
   autocmd FileType rust setlocal textwidth=79
+  autocmd FileType rust setlocal colorcolumn=80
   autocmd FileType rust setlocal tabstop=4
   autocmd FileType rust setlocal softtabstop=4
   autocmd FileType rust setlocal shiftwidth=4
@@ -346,8 +342,8 @@ augroup END
 augroup Setting-Haskell
   autocmd!
 
+  autocmd FileType haskell setlocal textwidth=79
   autocmd FileType haskell setlocal colorcolumn=80
-  autocmd FileType haskell setlocal textwidth=80
   autocmd FileType haskell setlocal tabstop=2
   autocmd FileType haskell setlocal softtabstop=2
   autocmd FileType haskell setlocal shiftwidth=2
@@ -358,8 +354,8 @@ augroup END
 augroup Setting-Blockdiag
   autocmd!
 
+  autocmd FileType diag setlocal textwidth=79
   autocmd FileType diag setlocal colorcolumn=80
-  autocmd FileType diag setlocal textwidth=80
   autocmd FileType diag setlocal tabstop=2
   autocmd FileType diag setlocal softtabstop=2
   autocmd FileType diag setlocal shiftwidth=2
@@ -370,8 +366,8 @@ augroup END
 augroup Setting-Maxima
   autocmd!
 
+  autocmd FileType maxima setlocal textwidth=99
   autocmd FileType maxima setlocal colorcolumn=100
-  autocmd FileType maxima setlocal textwidth=100
   autocmd FileType maxima setlocal tabstop=2
   autocmd FileType maxima setlocal softtabstop=2
   autocmd FileType maxima setlocal shiftwidth=2
