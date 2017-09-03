@@ -503,8 +503,8 @@ nnoremap <silent>c$ d$a
 nnoremap <silent>c\ c$
 " }}}
 
-nmap <leader>s :set number!<cr>
-nmap <leader>l :set list!<cr>
+nmap <space>s :set number!<cr>
+nmap <space>l :set list!<cr>
 nmap <space>z :on<cr>
 " }}}
 
