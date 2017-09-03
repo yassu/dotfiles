@@ -42,6 +42,9 @@ if v:version >= 800 " {{{
         \    },
         \ })
     call dein#add('Shougo/neomru.vim')
+    call dein#add('plasticboy/vim-markdown')
+    call dein#add('kannokanno/previm')
+    call dein#add('tyru/open-browser.vim')
     call dein#end()
 " }}}
 else " {{{
@@ -87,6 +90,9 @@ else " {{{
         \ },
     \ }
     NeoBundle 'Shougo/neomru.vim'
+    NeoBundle 'plasticboy/vim-markdown'
+    NeoBundle 'kannokanno/previm'
+    NeoBundle 'tyru/open-browser.vim'
     call neobundle#end()
 endif " }}}
 " Plugin Setting {{{
@@ -164,6 +170,9 @@ nmap <Space>tf :VimFiler -tab -simple -winwidth=35 -no-quit -project<cr>
 nmap <Space>d :VimFiler -split -simple -winwidth=35 -no-quit -project ~/Dropbox/ <cr>
 nmap <Space>td :VimFiler -tab -simple -winwidth=35 -no-quit -project ~/Dropbox/ <cr>
 " }}}
+
+" previm
+let g:previm_open_cmd = 'open -a "/Applications/Google Chrome.app"'
 " }}}
 " }}}
 
