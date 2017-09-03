@@ -108,10 +108,6 @@ let g:quickrun_config['yaml'] = {
 \ }
 " }}}
 
-" unite {{{
-nmap <space>m :<c-u>Unite file_mru<cr>
-" }}}
-
 " easy-align {{{
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -174,6 +170,8 @@ if (v:version >= 800 && dein#tap('twilight')) ||
 else
   colorscheme desert
 endif
+
+let g:mapleader='<space>'
 
 " filetype {{{
 autocmd BufWinEnter,BufNewFile SConstruct set filetype=python
@@ -466,11 +464,6 @@ endfunction
 command! -nargs=? UnderLine call s:drawUnderLine(<f-args>)
 nnoremap <leader>u :UnderLine<cr>
 nnoremap <leader>U :UnderLine<space>
-" }}}
-
-" task-list {{{
-let g:task_filename=expand('~/.vim/memo/tasks')
-nmap <Space>t :e <c-r>=g:task_filename<cr><cr>
 " }}}
 
 " mapping {{{
