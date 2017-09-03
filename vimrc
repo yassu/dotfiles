@@ -223,16 +223,6 @@ set statusline+=:[%p%%]
 set incsearch
 set foldmethod=marker
 
-function! g:ToggleFolding()
-    if &foldcolumn
-        setlocal foldcolumn=0
-    else
-        setlocal foldcolumn=2
-    endif
-endfunction
-setlocal foldcolumn=0
-nmap <leader>f :call g:ToggleFolding()<cr>
-
 if exists('&ambiwidth')
     set ambiwidth=double
 endif
