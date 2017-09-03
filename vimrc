@@ -476,8 +476,8 @@ nnoremap L :cnext<cr>
 nnoremap H :cprev<cr>
 " }}}
 " vimrc {{
-nnoremap <leader>. :e      ~/dotfiles/vimrc<cr>
-nnoremap <Leader>? :source ~/dotfiles/vimrc<cr>
+nnoremap <space>. :e      ~/dotfiles/vimrc<cr>
+nnoremap <space>? :source ~/dotfiles/vimrc<cr>
 nnoremap <c-n> <c-a><c-x>
 " }}
 " normal mode {{{
