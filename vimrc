@@ -476,7 +476,7 @@ nnoremap L :cnext<cr>
 nnoremap H :cprev<cr>
 " }}}
 " vimrc {{
-nnoremap <space>. :e      ~/dotfiles/vimrc<cr>
+nnoremap <space>. :tabnew      ~/dotfiles/vimrc<cr>
 nnoremap <space>? :source ~/dotfiles/vimrc<cr>
 nnoremap <c-n> <c-a><c-x>
 " }}
