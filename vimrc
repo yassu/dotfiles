@@ -14,7 +14,6 @@ if v:version >= 800 " {{{
     call dein#add('tpope/vim-surround')
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-textobj-entire')
-    call dein#add('Shougo/neomru.vim')
     call dein#add('glidenote/memolist.vim')
     call dein#add('tomtom/tcomment_vim')
     call dein#add('koron/codic-vim')
@@ -42,6 +41,7 @@ if v:version >= 800 " {{{
         \     'unix': 'gmake',
         \    },
         \ })
+    call dein#add('Shougo/neomru.vim')
     call dein#end()
 " }}}
 else " {{{
@@ -86,6 +86,7 @@ else " {{{
         \ 'unix' : 'make -f make_unix.mak',
         \ },
     \ }
+    NeoBundle 'Shougo/neomru.vim'
     call neobundle#end()
 endif " }}}
 " Plugin Setting {{{
@@ -131,6 +132,10 @@ nmap <leader>mn :MemoNew<cr>memo<cr>
 nmap <leader>ml :MemoList<cr>
 nmap <leader>mg :MemoGrep<cr>
 " }}}
+
+" neomru {{{
+nmap <space>M :Unite file_mru<cr>
+"}}}
 
 " neosnippet-snippets {{{
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -225,7 +230,7 @@ function! g:ToggleFolding()
         setlocal foldcolumn=2
     endif
 endfunction
-set foldcolumn=0
+setlocal foldcolumn=0
 nmap <leader>f :call g:ToggleFolding()<cr>
 
 if exists('&ambiwidth')
