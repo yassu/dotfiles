@@ -98,6 +98,7 @@ endif " }}}
 " Plugin Setting {{{
 
 " quickrun {{{
+nmap <space>r :QuickRun<cr>
 autocmd BufRead,BufNewFile *_test.py set filetype=python.test
 let g:quickrun_config = {}
 let g:quickrun_config['python.test'] = {
