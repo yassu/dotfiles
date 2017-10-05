@@ -165,6 +165,9 @@ alias my_clock='python ~/dev/python/MyClock/my_clock/my_clock.py'
 alias clock='my_clock'
 alias pomo='my_clock -f ~/.pomodoro.clock.json'
 
+export SCALA_HOME=~/bin/scala-2.12.3
+export PATH=$PATH:$SCALA_HOME/bin
+
 
 alias hist='history'
 alias py='python'
