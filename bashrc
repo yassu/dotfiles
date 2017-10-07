@@ -138,10 +138,6 @@ peco-select-history() {
 }
 bind -x '"\C-p": peco-select-history'
 
-# # rbenv
-# export PAHT=$HOME/.rbenv/bin:$PATH
-# eval "$(rbenv init - bash)"
-
 # # go-lang
 export GOPATH=$HOME/.go
 export PATH=$PATH:$GOPATH/bin
