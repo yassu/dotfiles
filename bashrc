@@ -167,6 +167,7 @@ alias pomo='my_clock -f ~/.pomodoro.clock.json'
 
 export SCALA_HOME=~/bin/scala-2.12.3
 export PATH=$PATH:$SCALA_HOME/bin
+alias scc='scalac'
 
 
 alias hist='history'

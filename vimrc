@@ -45,6 +45,7 @@ if v:version >= 800 " {{{
     call dein#add('plasticboy/vim-markdown')
     call dein#add('kannokanno/previm')
     call dein#add('tyru/open-browser.vim')
+    call dein#add('derekwyatt/vim-scala')
     call dein#end()
 " }}}
 else " {{{
@@ -93,6 +94,7 @@ else " {{{
     NeoBundle 'plasticboy/vim-markdown'
     NeoBundle 'kannokanno/previm'
     NeoBundle 'tyru/open-browser.vim'
+    NeoBundle 'derekwyatt/vim-scala'
     call neobundle#end()
 endif " }}}
 " Plugin Setting {{{
@@ -193,6 +195,7 @@ autocmd BufWinEnter,BufNewFile SConstruct set filetype=python
 autocmd BufWinEnter,BufNewFile *test*.py set filetype=python.test
 autocmd BufNewFile,BufRead *.tex  setfiletype tex
 autocmd BufNewFile,BufRead *.go  setfiletype go
+autocmd BufNewFile,BufRead *.scala  setfiletype scala
 autocmd BufNewFile,BufRead *.sage setfiletype python
 autocmd BufNewFile,BufRead *.markdown setfiletype markdown
 autocmd BufNewFile,BufRead *.plant setfiletype plantuml
@@ -283,6 +286,17 @@ augroup Setting-Yaml
   autocmd FileType yaml setlocal colorcolumn=100
   autocmd FileType yaml setlocal softtabstop=2
   autocmd FileType yaml setlocal shiftwidth=2
+augroup END
+" }}}
+
+" scala {{{
+augroup Setting-Scala
+  autocmd!
+
+  autocmd FileType scala setlocal textwidth=80
+  autocmd FileType scala setlocal colorcolumn=80
+  autocmd FileType scala setlocal softtabstop=2
+  autocmd FileType scala setlocal shiftwidth=2
 augroup END
 " }}}
 
