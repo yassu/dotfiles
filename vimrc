@@ -293,8 +293,8 @@ augroup END
 augroup Setting-Scala
   autocmd!
 
-  autocmd FileType scala setlocal textwidth=80
-  autocmd FileType scala setlocal colorcolumn=80
+  autocmd FileType scala setlocal textwidth=99
+  autocmd FileType scala setlocal colorcolumn=100
   autocmd FileType scala setlocal softtabstop=2
   autocmd FileType scala setlocal shiftwidth=2
 augroup END
