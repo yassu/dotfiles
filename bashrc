@@ -113,7 +113,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export LANG=C
+export LANG='en_US.UTF-8'
+export LC_ALL='en_US.UTF-8'
 
 ## define PS1
 hg_branch() {
@@ -185,8 +186,4 @@ alias chrome='open -a Google\ Chrome'
 alias firefox='open -a Firefox'
 alias gnup='gnuplot'
 
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 export PATH=$PATH:~/.nodebrew/node/v8.2.0/bin/

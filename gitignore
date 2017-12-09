@@ -14,3 +14,14 @@ vim/session
 
 config/fish/conf.d/
 config/amf/
+
+# sbt specific
+
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/

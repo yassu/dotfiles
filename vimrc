@@ -107,6 +107,10 @@ let g:quickrun_config['python.test'] = {
     \ 'command': 'nosetests',
     \ 'hook/shebang/enable': 0,
 \ }
+let g:quickrun_config['scala'] = {
+    \ 'command': 'scalac',
+    \ 'hook/shebang/enable': 0,
+\ }
 let g:quickrun_config['markdown'] = {
     \ 'command': 'shiba',
     \ 'cmdopt': '--detach',
