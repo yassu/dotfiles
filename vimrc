@@ -35,7 +35,8 @@ set noswapfile
 set nobackup
 
 set conceallevel=0
-set nonumber
+set number
+set relativenumber
 set visualbell t_vb=
 set noequalalways
 set clipboard+=unnamed
