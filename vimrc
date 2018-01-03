@@ -17,13 +17,35 @@ call dein#add('tpope/vim-surround')
 call dein#add('kana/vim-textobj-user')
 call dein#add('kana/vim-textobj-indent')
 call dein#add('Shougo/neosnippet')
+let g:neosnippet#snippets_directory = '~/.vim/snippets/'
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+
+"set snippet file dir
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
 call dein#add('kana/vim-textobj-entire')
 call dein#add('glidenote/memolist.vim')
 let g:memolist_path = "~/Dropbox/memo/"
 nnoremap <Space>mn  :MemoNew memo<CR>
 nnoremap <Space>ml  :MemoList<CR>
 nnoremap <Space>mg  :MemoGrep<CR>
-
+call dein#add('danro/rename.vim')
 call dein#end()
 
 set background=dark
@@ -291,6 +313,7 @@ nnoremap L :cnext<cr>
 nnoremap H :cprev<cr>
 " }}}
 " vimrc {{
+nnoremap <space>. :e ~/.vimrc<cr>
 nnoremap <space>. :tabnew      ~/dotfiles/vimrc<cr>
 nnoremap <space>? :source ~/dotfiles/vimrc<cr>
 nnoremap <c-n> <c-a><c-x>
