@@ -46,6 +46,7 @@ nnoremap <Space>mn  :MemoNew memo<CR>
 nnoremap <Space>ml  :MemoList<CR>
 nnoremap <Space>mg  :MemoGrep<CR>
 call dein#add('danro/rename.vim')
+call dein#add('tomtom/tcomment_vim')
 call dein#end()
 
 set background=dark
