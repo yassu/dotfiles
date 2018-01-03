@@ -1,6 +1,11 @@
 snippet def
 abbr def funcname(...)=...
 options head
-    def ${1:#name} = {
+    def ${1:#name}(${2}): ${3} = ${0}
+
+snippet def{
+abbr def funcname(...)=...
+options head
+    def ${1:#name}(${2}): ${3} = {
         ${0}
     }
