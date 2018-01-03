@@ -2,6 +2,30 @@ scriptencoding utf-8
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
 
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+call dein#begin(expand('~/.vim/dein'))
+
+call dein#add('Shougo/dein.vim')
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/neomru.vim')
+if dein#tap('neomru.vim')
+    nnoremap <Space><S-M> :Unite file_mru<cr>
+endif
+call dein#add('tpope/vim-surround')
+call dein#add('kana/vim-textobj-user')
+call dein#add('kana/vim-textobj-indent')
+call dein#add('Shougo/neosnippet')
+call dein#add('kana/vim-textobj-entire')
+call dein#add('glidenote/memolist.vim')
+let g:memolist_path = "~/Dropbox/memo/"
+nnoremap <Space>mn  :MemoNew memo<CR>
+nnoremap <Space>ml  :MemoList<CR>
+nnoremap <Space>mg  :MemoGrep<CR>
+
+call dein#end()
+
 set background=dark
 colorscheme desert
 
