@@ -47,6 +47,15 @@ nnoremap <Space>ml  :MemoList<CR>
 nnoremap <Space>mg  :MemoGrep<CR>
 call dein#add('danro/rename.vim')
 call dein#add('tomtom/tcomment_vim')
+call dein#add('thaerkh/vim-workspace')
+let g:workspace_autocreate =0
+let g:workspace_autosave_always = 0
+let g:workspace_autosave = 0
+nnoremap <Space>s :ToggleWorkspace<CR>
+if v:version >= 800
+    call dein#add('lambdalisue/gina.vim')
+endif
+
 call dein#end()
 
 set background=dark
@@ -101,7 +110,7 @@ if exists('&ambiwidth')
 endif
 set list listchars=tab:>>,trail:.
 
-set undofile
+set noundofile
 set undodir=~/.vim/undo
 set backupdir=~/.vim/backup
 set directory=~/.vim/swp
@@ -347,7 +356,6 @@ nnoremap <silent>c$ d$a
 nnoremap <silent>c\ c$
 " }}}
 
-nmap <space>s :set number!<cr>
 nmap <space>l :set list!<cr>
 nmap <space>z :on<cr>
 " }}}

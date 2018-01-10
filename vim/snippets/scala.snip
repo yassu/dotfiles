@@ -1,11 +1,67 @@
+snippet for
+abbr for () ...
+options head
+    for (${1:cond})
+        ${0}
+
+snippet cls
+abbt class ...
+options class
+    class ${1} {
+        ${0}
+    }
+
+snippet obj
+abbr object ...
+options head
+    object ${1} {
+        ${0}
+    }
+
 snippet def
+abbr def funcname=...
+options head
+    def ${1:#name} = ${0}
+
+snippet def:
+abbr def funcname: ... =...
+options head
+    def ${1:#name}: ${2} = ${0}
+
+snippet def(
 abbr def funcname(...)=...
+options head
+    def ${1:#name}(${2}) = ${0}
+
+snippet def(:
+abbr def funcname(...): ... =...
 options head
     def ${1:#name}(${2}): ${3} = ${0}
 
 snippet def{
 abbr def funcname(...)=...
 options head
-    def ${1:#name}(${2}): ${3} = {
+    def ${1:#name} = {
+        ${0}
+    }
+
+snippet def:{
+abbr def funcname(...)= { ...
+options head
+    def ${1:#name}: ${2} = {
+        ${0}
+    }
+
+snippet def({
+abbr def funcname(...)= {...
+options head
+    def ${1:#name}(${2:#args}) = {
+        ${0}
+    }
+
+snippet def(:{
+abbr def funcname(...): ... = {...
+options head
+    def ${1:#name}(${2:#args}): ${3} = {
         ${0}
     }
