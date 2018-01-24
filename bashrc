@@ -168,6 +168,7 @@ alias pomo='my_clock -f ~/.pomodoro.clock.json'
 
 export XDG_CONFIG_HOME=~/.config
 
+which nvim > /dev/null 2>&1 && alias vim='nvim'
 alias hist='history'
 alias py='python'
 alias ipy='ipython'
