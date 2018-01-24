@@ -68,6 +68,7 @@ if dein#load_state('/Users/yuki_yasuda/.cache/dein')
       call dein#add('lambdalisue/gina.vim')
   endif
   call dein#add('ktvoelker/sbt-vim')
+  call dein#add('vim-scripts/twilight')
 
   " Required:
   call dein#end()
@@ -90,7 +91,11 @@ set number
 set relativenumber
 
 set background=dark
-colorscheme desert
+if dein#tap('twilight')
+    colorscheme twilight
+else
+    colorscheme desert
+endif
 
 " filetype {{{
 autocmd BufWinEnter,BufNewFile SConstruct set filetype=python
