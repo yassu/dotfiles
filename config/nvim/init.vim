@@ -3,18 +3,14 @@ set encoding=utf-8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
 
 
-"dein Scripts-----------------------------
-" Required:
+" dein {{{
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
-" Required:
+
 if dein#load_state('/Users/yuki_yasuda/.cache/dein')
   call dein#begin('/Users/yuki_yasuda/.cache/dein')
 
   " Let dein manage dein
-  " Required:
   call dein#add('/Users/yuki_yasuda/.cache/dein/repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here:
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
@@ -70,22 +66,13 @@ if dein#load_state('/Users/yuki_yasuda/.cache/dein')
   call dein#add('ktvoelker/sbt-vim')
   call dein#add('vim-scripts/twilight')
 
-  " Required:
   call dein#end()
   call dein#save_state()
 endif
 
-" Required:
 filetype plugin indent on
 syntax enable
-
-" If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
-
-"End dein Scripts-------------------------
-
+" }}}
 
 set number
 set relativenumber
