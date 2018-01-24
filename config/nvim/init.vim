@@ -15,11 +15,59 @@ if dein#load_state('/Users/yuki_yasuda/.cache/dein')
   call dein#add('/Users/yuki_yasuda/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
+
+  call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+  call dein#add('Shougo/unite.vim')
+  call dein#add('Shougo/neomru.vim')
+  if dein#tap('neomru.vim')
+      nnoremap <Space><S-M> :Unite file_mru<cr>
+  endif
+  call dein#add('tpope/vim-surround')
+  call dein#add('kana/vim-textobj-user')
+  call dein#add('kana/vim-textobj-indent')
+  call dein#add('Shougo/neosnippet')
+  let g:neosnippet#snippets_directory = '~/.vim/snippets/'
+
+  " Plugin key-mappings.
+  imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+  " SuperTab like snippets behavior.
+  "imap <expr><TAB>
+  " \ pumvisible() ? "\<C-n>" :
+  " \ neosnippet#expandable_or_jumpable() ?
+  " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+  smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+  \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+  " For conceal markers.
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+
+  "set snippet file dir
+  let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
+  call dein#add('kana/vim-textobj-entire')
+  call dein#add('glidenote/memolist.vim')
+  let g:memolist_path = "~/Dropbox/memo/"
+  nnoremap <Space>mn  :MemoNew memo<CR>
+  nnoremap <Space>ml  :MemoList<CR>
+  nnoremap <Space>mg  :MemoGrep<CR>
+  call dein#add('danro/rename.vim')
+  call dein#add('tomtom/tcomment_vim')
+  call dein#add('thaerkh/vim-workspace')
+  let g:workspace_autocreate =0
+  let g:workspace_autosave_always = 0
+  let g:workspace_autosave = 0
+  nnoremap <Space>s :ToggleWorkspace<CR>
+  if v:version >= 800
+      call dein#add('lambdalisue/gina.vim')
+  endif
+  call dein#add('ktvoelker/sbt-vim')
 
   " Required:
   call dein#end()
