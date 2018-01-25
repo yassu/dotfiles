@@ -115,6 +115,7 @@ augroup END
 set noswapfile
 set nobackup
 
+tnoremap <silent> <ESC> <C-\><C-n>
 set conceallevel=0
 set number
 set relativenumber
