@@ -1,6 +1,5 @@
 " TODO:
 " jekyllのプラグインをいい感じにする
-" terminalでset nonumberされてる状態にする
 
 scriptencoding utf-8
 set encoding=utf-8
@@ -153,6 +152,11 @@ set textwidth=80
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" terminal {{{
+autocmd TermOpen * setlocal norelativenumber
+autocmd TermOpen * setlocal nonumber
+" }}}
 
 " tex {{{
 let tex_conceal = ''
