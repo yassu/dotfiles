@@ -6,11 +6,11 @@ set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
 " dein {{{
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
-if dein#load_state('/Users/yuki_yasuda/.cache/dein')
-  call dein#begin('/Users/yuki_yasuda/.cache/dein')
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
 
   " Let dein manage dein
-  call dein#add('/Users/yuki_yasuda/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
 
   " You can specify revision/branch/tag.
   call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
@@ -293,8 +293,8 @@ augroup END
 command! Dog !shiba --detach %
 " }}}
 
-autocmd BufWinLeave *? silent mkview
-autocmd BufWinEnter *? silent loadview
+autocmd BufWinLeave ?* silent mkview
+autocmd BufWinEnter ?* silent loadview
 
 set nrformats =
 
