@@ -346,9 +346,8 @@ nnoremap L :cnext<cr>
 nnoremap H :cprev<cr>
 " }}}
 " vimrc {{
-nnoremap <space>. :e ~/.vimrc<cr>
-nnoremap <space>. :tabnew      ~/dotfiles/vimrc<cr>
-nnoremap <space>? :source ~/dotfiles/vimrc<cr>
+nnoremap <space>. :e ~/.config/nvim/init.vim<cr>
+nnoremap <space>? :source ~/.config/nvim/init.vim<cr>
 nnoremap <c-n> <c-a><c-x>
 " }}
 " normal mode {{{
