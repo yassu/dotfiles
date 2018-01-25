@@ -14,6 +14,7 @@ vim/undo
 vim/dein
 vim/.netrwhist
 
+config/nvim/.netrwhist
 config/configstore/
 config/gtk-*/
 config/inkscape/
