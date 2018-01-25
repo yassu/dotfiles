@@ -47,6 +47,8 @@ if dein#load_state('~/.cache/dein')
 
   "set snippet file dir
   let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
+
+  call dein#add('Shougo/neosnippet-snippets')
   call dein#add('kana/vim-textobj-entire')
   call dein#add('glidenote/memolist.vim')
   let g:memolist_path = "~/Dropbox/memo/"
