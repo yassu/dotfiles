@@ -1,3 +1,7 @@
+" TODO:
+" jekyllのプラグインをいい感じにする
+" terminalでset nonumberされてる状態にする
+
 scriptencoding utf-8
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
@@ -67,6 +71,8 @@ if dein#load_state('~/.cache/dein')
   endif
   call dein#add('ktvoelker/sbt-vim')
   call dein#add('vim-scripts/twilight')
+  call dein#add('Shougo/deoplete.nvim')
+  let g:deoplete#enable_at_startup = 1
 
   call dein#end()
   call dein#save_state()
