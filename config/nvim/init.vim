@@ -73,6 +73,8 @@ if dein#load_state('~/.cache/dein')
   call dein#add('Shougo/deoplete.nvim')
   let g:deoplete#enable_at_startup = 1
 
+  call dein#add('parkr/vim-jekyll')
+  nnoremap <Space>jp :Jpost!<CR>
   call dein#end()
   call dein#save_state()
 endif
@@ -156,6 +158,7 @@ set shiftwidth=4
 " terminal {{{
 autocmd TermOpen * setlocal norelativenumber
 autocmd TermOpen * setlocal nonumber
+autocmd TermOpen * setlocal scrolloff=0
 " }}}
 
 " tex {{{
