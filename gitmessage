@@ -1,0 +1,41 @@
+
+
+
+# ==== Emojis ====
+# ➕  :heavy_plus_sign:  when adding feature
+# ➖  :heavy_minus_sign: when removing feature
+# ✅  :white_check_mark: when adding tests
+# 🐛  :bug:              when fixing a bug
+# ⬆️   :arrow_up:         when upgrading dependencies
+# ⬇️   :arrow_down:       when downgrading dependencies
+# 🔈  :speaker:          when adding logging
+# 🔇  :mute:             when reducing logging
+# 🎨  :art:              when improving the format/structure of the code
+# 🚀  :rocket:           when improving performance
+# 🔒  :lock:             when dealing with security
+# ✏️   :pencil2:          when writing docs
+# 💡  :bulb:             new idea
+# 🚧  :construction:     work in progress
+
+# ==== Format ====
+# :emoji: Subject
+#
+# Commit body...
+
+# ==== The Seven Rules ====
+# 1. Separate subject from body with a blank line
+# 2. Limit the subject line to 50 characters
+# 3. Capitalize the subject line
+# 4. Do not end the subject line with a period
+# 5. Use the imperative mood in the subject line
+# 6. Wrap the body at 72 characters
+# 7. Use the body to explain what and why vs. how
+#
+# How to Write a Git Commit Message http://chris.beams.io/posts/git-commit/
+
+# for http://memo.goodpatch.co/2016/07/beautiful-commits-with-emojis/
+
+# Ref:
+#
+# https://qiita.com/mfks17/items/e68adc058e1a9e519807
+# https://gist.github.com/pocotan001/68f96bf86891db316f20

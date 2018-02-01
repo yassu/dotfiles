@@ -26,6 +26,10 @@
 
 [difftool.latex]
     cmd = latexdiff -e utf-8 "$LOCAL" "$REMOTE"
+
+[commit]
+    template = ~/.gitmessage
+
 [merge]
 	ff = false
 [pull]
