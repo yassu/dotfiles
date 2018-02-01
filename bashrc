@@ -161,10 +161,6 @@ export PATH=~$HOME/bin:$PATH
 alias my_clock='python ~/dev/python/MyClock/my_clock/my_clock.py'
 alias clock='my_clock'
 
-# export SCALA_HOME=~/bin/scala-2.12.3
-# export PATH=$PATH:$SCALA_HOME/bin
-# alias scc='scalac'
-
 export XDG_CONFIG_HOME=~/.config
 
 which nvim > /dev/null 2>&1 && alias vim='nvim'
