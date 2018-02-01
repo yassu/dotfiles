@@ -168,7 +168,6 @@ alias clock='my_clock'
 export XDG_CONFIG_HOME=~/.config
 
 which nvim > /dev/null 2>&1 && alias vim='nvim'
-alias hist='history'
 alias py='python'
 alias ipy='ipython'
 alias py3='python3'
@@ -185,6 +184,5 @@ alias skim='open -ga /Applications/Skim.app/'
 alias g='git'
 alias chrome='open -a Google\ Chrome'
 alias firefox='open -a Firefox'
-alias gnup='gnuplot'
 
 export PATH=$PATH:~/.nodebrew/node/v8.2.0/bin/
