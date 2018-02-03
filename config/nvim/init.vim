@@ -75,6 +75,13 @@ if dein#load_state('~/.cache/dein')
 
   call dein#add('parkr/vim-jekyll')
   nnoremap <Space>jp :Jpost!<CR>
+  call dein#add('osyo-manga/vim-hopping')
+  let g:hopping#keymapping = {
+    \	"\<C-n>" : "<Over>(hopping-next)",
+    \	"\<C-p>" : "<Over>(hopping-prev)",
+    \	"\<C-u>" : "<Over>(scroll-u)",
+    \	"\<C-d>" : "<Over>(scroll-d)",
+    \}
   call dein#end()
   call dein#save_state()
 endif
