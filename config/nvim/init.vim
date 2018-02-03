@@ -401,8 +401,8 @@ nnoremap <silent>c$ d$a
 nnoremap <silent>c\ c$
 " }}}
 
-nmap <space>l :set list!<cr>
-nmap <space>z :on<cr>
+nnoremap <space>l :set list!<cr>
+nnoremap <space>z :on<cr>
 " }}}
 
 syntax on
