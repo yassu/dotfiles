@@ -163,7 +163,7 @@ alias clock='my_clock'
 
 export XDG_CONFIG_HOME=~/.config
 
-which nvim > /dev/null 2>&1 && alias vim='nvim'
+# which nvim > /dev/null 2>&1 && alias vim='nvim'
 alias py='python'
 alias ipy='ipython'
 alias py3='python3'
