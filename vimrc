@@ -55,8 +55,7 @@ nnoremap <Space>s :ToggleWorkspace<CR>
 if v:version >= 800
     call dein#add('lambdalisue/gina.vim')
 endif
-call dein#add('ktvoelker/sbt-vim')
-
+call dein#add('davidhalter/jedi-vim')
 call dein#end()
 
 set background=dark
