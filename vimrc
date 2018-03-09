@@ -13,7 +13,6 @@ call dein#add('Shougo/neomru.vim')
 if dein#tap('neomru.vim')
     nnoremap <Space><S-M> :Unite file_mru<cr>
 endif
-call dein#add('tpope/vim-surround')
 call dein#add('kana/vim-textobj-user')
 call dein#add('kana/vim-textobj-indent')
 call dein#add('Shougo/neosnippet')
