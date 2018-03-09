@@ -65,6 +65,19 @@ let g:jedi#auto_vim_configuration = 0
 " g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
 call dein#add('machakann/vim-sandwich')
+let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+let g:sandwich#recipes += [
+      \   {
+      \     'buns'    : ['"""', '"""'],
+      \     'quoteescape'    : 1,
+      \     'expand_range': 0,
+      \     'match_syntax': 1,
+      \     'linewise':     0,
+      \     'nesting':      0,
+      \     'filetype': ['python', 'scala'],
+      \     'input'   : ['@'],
+      \   },
+      \ ]
 call dein#end()
 
 set background=dark
