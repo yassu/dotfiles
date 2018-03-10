@@ -14,6 +14,7 @@ if dein#tap('neomru.vim')
     nnoremap <Space><S-M> :Unite file_mru<cr>
 endif
 call dein#add('kana/vim-textobj-user')
+call dein#add('kana/vim-operator-user')
 call dein#add('kana/vim-textobj-indent')
 call dein#add('Shougo/neosnippet')
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
@@ -64,20 +65,16 @@ let g:jedi#auto_vim_configuration = 0
 
 " g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
 
-call dein#add('machakann/vim-sandwich')
-let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
-let g:sandwich#recipes += [
-      \   {
-      \     'buns'    : ['"""', '"""'],
-      \     'quoteescape'    : 1,
-      \     'expand_range': 0,
-      \     'match_syntax': 1,
-      \     'linewise':     0,
-      \     'nesting':      0,
-      \     'filetype': ['python', 'scala'],
-      \     'input'   : ['@'],
-      \   },
-      \ ]
+call dein#add('rhysd/vim-operator-surround')
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
+let g:operator#surround#blocks =
+\ {
+\   '-' : [
+\       { 'block' : ['"""', '"""'], 'motionwise' : ['char', 'line', 'block'], 'keys' : ['@'] },
+\   ]
+\ }
 call dein#end()
 
 set background=dark
@@ -186,8 +183,8 @@ augroup Setting-Scala
 
   autocmd FileType scala setlocal textwidth=99
   autocmd FileType scala setlocal colorcolumn=100
-  autocmd FileType scala setlocal softtabstop=2
-  autocmd FileType scala setlocal shiftwidth=2
+  autocmd FileType scala setlocal softtabstop=4
+  autocmd FileType scala setlocal shiftwidth=4
 augroup END
 " }}}
 
