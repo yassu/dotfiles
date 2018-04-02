@@ -13,7 +13,6 @@ call dein#add('Shougo/neomru.vim')
 if dein#tap('neomru.vim')
     nnoremap <Space><S-M> :Unite file_mru<cr>
 endif
-call dein#add('tpope/vim-surround')
 call dein#add('kana/vim-textobj-user')
 call dein#add('kana/vim-textobj-indent')
 call dein#add('Shougo/neosnippet')
@@ -59,6 +58,9 @@ call dein#add('ktvoelker/sbt-vim')
 call dein#add('vim-jp/vimdoc-ja')
 set helplang=ja,en
 
+" g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
+
+call dein#add('machakann/vim-sandwich')
 call dein#end()
 
 set background=dark
@@ -272,9 +274,6 @@ augroup END
 " commands {{{
 command! Dog !shiba --detach %
 " }}}
-
-autocmd BufWinLeave *? silent mkview
-autocmd BufWinEnter *? silent loadview
 
 set nrformats =
 

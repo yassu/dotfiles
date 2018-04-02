@@ -316,9 +316,6 @@ augroup END
 command! Dog !shiba --detach %
 " }}}
 
-autocmd BufWinLeave ?* silent mkview
-autocmd BufWinEnter ?* silent loadview
-
 set nrformats =
 
 set autoindent

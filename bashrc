@@ -161,15 +161,13 @@ export PATH=~$HOME/bin:$PATH
 alias my_clock='python ~/dev/python/MyClock/my_clock/my_clock.py'
 alias clock='my_clock'
 
-if [ -d $HOME/.anyenv ]
-then
-    export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
-fi
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 export XDG_CONFIG_HOME=~/.config
 
-# which nvim > /dev/null 2>&1 && alias vim='nvim'
 alias py='python'
 alias ipy='ipython'
 alias py3='python3'
