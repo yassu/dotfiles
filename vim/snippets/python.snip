@@ -1,26 +1,102 @@
+snippet     #!
+abbr        #!/usr/bin/env python3
+alias       shebang
+options     head
+	#!/usr/bin/env python3
+	${0}
+
+snippet     class
+abbr        class Class(...): ...
+options     head
+	class ${1:#:name}(${2:object}):
+		def __init__(self, ${3}):
+			${0:pass}
+
 snippet def(
 abbr def(...):...
 options head
-    def ${1}(${2}):
-        ${0}
+	def ${1}(${2}):
+		${0}
 
-snippet for
-abbr for ...
-options head
-    for ${1} in ${2}:
-        ${0}
+snippet     if
+abbr        if ...: ...
+options     head
+	if ${1:#:condition}:
+		${0:pass}
+
+snippet     elif
+abbr        elif ...: ...
+options     head
+	elif ${1:#:condition}:
+		${0:pass}
+
+snippet     else
+abbr        else: ...
+options     head
+	else:
+		${0:pass}
+
+snippet     while
+abbr        while ...: ...
+options     head
+	while ${1:#:condition}:
+		${0:pass}
+
+snippet     for
+abbr        for ... in ...: ...
+options     head
+	for ${1:#:value} in ${2:#:list}:
+		${0:pass}
+
+snippet     wopen
+options     head
+	with open(${1:#:filename}, '${2:r}') as ${3:f}:
+		${0:pass}
+
+snippet     with
+alias       w
+abbr        with {func}({file}) as :
+options     head
+	with ${1:open}(${2:#:filename, mode}) as ${3:f}:
+		${0:pass}
+
+snippet     ifmain
+abbr        if __name__ == '__main__': ...
+alias       main
+options     head
+	if __name__ == '__main__':
+		${0:pass}
+
+snippet     print
+options     word
+	print(${0:#:TARGET})
+
+snippet     coding
+abbr        # -*- coding ...
+	# -*- coding: utf-8 -*-
 
 snippet imp
 abbr    import ...
 options head
-    import ${0}
+	import ${0}
 
 snippet impa
 abbr    import ... as ...
 options head
-    import ${1} as ${2}
+	import ${1} as ${2}
 
 snippet fimp
 abbr    from ... import ...
 options head
-    from ${1} import ${2}
+	from ${1} import ${2}
+
+snippet np
+abbr    import numpy as np
+options head
+	import numpy as np
+
+
+snippet tf
+abbr    import tensorflow as tf
+options head
+	import tensorflow as tf

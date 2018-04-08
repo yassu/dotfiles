@@ -17,7 +17,11 @@ call dein#add('kana/vim-textobj-user')
 call dein#add('kana/vim-operator-user')
 call dein#add('kana/vim-textobj-indent')
 call dein#add('Shougo/neosnippet')
+call dein#add('Shougo/neosnippet-snippets')
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
+let g:neosnippet#disable_runtime_snippets = {
+\   '_' : 1,
+\ }
 
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
