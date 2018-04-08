@@ -41,6 +41,9 @@ endif
 let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
 call dein#add('kana/vim-textobj-entire')
 call dein#add('glidenote/memolist.vim')
+let g:memolist_unite = 1
+let g:memolist_unite_option = "-auto-preview"
+let g:memolist_unite_source = "file_rec"
 let g:memolist_path = "~/Dropbox/memo/"
 nnoremap <Space>mn  :MemoNew memo<CR>
 nnoremap <Space>ml  :MemoList<CR>
@@ -75,6 +78,9 @@ let g:operator#surround#blocks =
 \       { 'block' : ['"""', '"""'], 'motionwise' : ['char', 'line', 'block'], 'keys' : ['@'] },
 \   ]
 \ }
+call dein#add('thinca/vim-quickrun')
+let quickrun_no_default_key_mappings = 0
+silent! map <unique> <Space>r <Plug>(quickrun)
 call dein#end()
 
 set background=dark
@@ -321,7 +327,7 @@ endfunction
 
 " underline {{{
 function! s:drawUnderLine(...)
-    let l:sep = get(a:, 1, '-')
+    let l:sep = get(a:, 1, '=')
     call append('.', repeat(l:sep, len(getline('.')) + 2))
 endfunction
 command! -nargs=? UnderLine call s:drawUnderLine(<f-args>)
