@@ -1,18 +1,17 @@
-snippet     #!
-abbr        #!/usr/bin/env python3
-alias       shebang
-options     head
-	#!/usr/bin/env python3
+snippet     init
+	#!/usr/bin/env python
+	# -*- coding: utf-8 -*-
+
 	${0}
 
 snippet     class
 abbr        class Class(...): ...
+alias       cls
 options     head
-	class ${1:#:name}(${2:object}):
-		def __init__(self, ${3}):
-			${0:pass}
+	class ${1:#:name}:
+		${0:pass}
 
-snippet def(
+snippet def
 abbr def(...):...
 options head
 	def ${1}(${2}):
@@ -57,7 +56,7 @@ snippet     with
 alias       w
 abbr        with {func}({file}) as :
 options     head
-	with ${1:open}(${2:#:filename, mode}) as ${3:f}:
+	with ${1:open}(${2:#:filename}) as ${3:f}:
 		${0:pass}
 
 snippet     ifmain
@@ -69,34 +68,36 @@ options     head
 
 snippet     print
 options     word
-	print(${0:#:TARGET})
+	print(${1:#:TARGET})
+	${0}
 
-snippet     coding
-abbr        # -*- coding ...
-	# -*- coding: utf-8 -*-
 
 snippet imp
 abbr    import ...
 options head
-	import ${0}
+	import ${1}
+	${0}
 
 snippet impa
 abbr    import ... as ...
 options head
 	import ${1} as ${2}
+	${0}
 
 snippet fimp
 abbr    from ... import ...
 options head
 	from ${1} import ${2}
+	${0}
 
 snippet np
 abbr    import numpy as np
 options head
 	import numpy as np
-
+	${0}
 
 snippet tf
 abbr    import tensorflow as tf
 options head
 	import tensorflow as tf
+	${0}
