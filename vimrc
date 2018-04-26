@@ -80,6 +80,11 @@ let g:operator#surround#blocks =
 call dein#add('thinca/vim-quickrun')
 let quickrun_no_default_key_mappings = 0
 silent! map <unique> <Space>r <Plug>(quickrun)
+call dein#add('thinca/vim-textobj-plugins')
+vmap i_ <Plug>(textobj-between-i)_
+omap i_ <Plug>(textobj-between-i)_
+vmap a_ <Plug>(textobj-between-a)_
+omap a_ <Plug>(textobj-between-a)_
 call dein#end()
 
 set background=dark
@@ -118,6 +123,7 @@ set conceallevel=0
 set number
 set relativenumber
 set visualbell t_vb=
+set mouse-=a
 set noequalalways
 set clipboard+=unnamed
 set ignorecase
