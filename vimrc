@@ -91,14 +91,14 @@ call dein#add('w0ng/vim-hybrid')
 call dein#add('chriskempson/vim-tomorrow-theme')
 call dein#add('gkjgh/cobalt')
 call dein#add('robertmeta/nofrils')
-if dein#tap('nofrils')
 call dein#end()
 
 set background=dark
 if dein#tap('nofrils')
     colorscheme nofrils-dark
 else
-    colorscheme
+    colorscheme desert
+endif
 
 " filetype {{{
 autocmd BufWinEnter,BufNewFile SConstruct set filetype=python
