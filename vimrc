@@ -85,10 +85,20 @@ vmap i_ <Plug>(textobj-between-i)_
 omap i_ <Plug>(textobj-between-i)_
 vmap a_ <Plug>(textobj-between-a)_
 omap a_ <Plug>(textobj-between-a)_
+call dein#add('vim-scripts/twilight256.vim')
+call dein#add('sjl/badwolf')
+call dein#add('w0ng/vim-hybrid')
+call dein#add('chriskempson/vim-tomorrow-theme')
+call dein#add('gkjgh/cobalt')
+call dein#add('robertmeta/nofrils')
+if dein#tap('nofrils')
 call dein#end()
 
 set background=dark
-colorscheme desert
+if dein#tap('nofrils')
+    colorscheme nofrils-dark
+else
+    colorscheme
 
 " filetype {{{
 autocmd BufWinEnter,BufNewFile SConstruct set filetype=python
