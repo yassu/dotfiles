@@ -91,6 +91,10 @@ call dein#add('w0ng/vim-hybrid')
 call dein#add('chriskempson/vim-tomorrow-theme')
 call dein#add('gkjgh/cobalt')
 call dein#add('robertmeta/nofrils')
+call dein#add('easymotion/vim-easymotion')
+let g:EasyMotion_do_mapping = 0
+map  <Space>s <Plug>(easymotion-bd-f)
+nmap <Space>s <Plug>(easymotion-overwin-f)
 call dein#end()
 
 set background=dark
