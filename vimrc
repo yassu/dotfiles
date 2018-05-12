@@ -95,6 +95,8 @@ call dein#add('easymotion/vim-easymotion')
 let g:EasyMotion_do_mapping = 0
 map  <Space>s <Plug>(easymotion-bd-f)
 nmap <Space>s <Plug>(easymotion-overwin-f)
+call dein#add('ntpeters/vim-better-whitespace')
+let g:strip_whitespace_on_save=1
 call dein#end()
 
 set background=dark
