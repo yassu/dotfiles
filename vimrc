@@ -98,6 +98,16 @@ nmap <Space>s <Plug>(easymotion-overwin-f)
 call dein#add('ntpeters/vim-better-whitespace')
 let g:strip_whitespace_on_save=1
 call dein#add('parkr/vim-jekyll')
+let g:jekyll_post_template = [
+\ '---',
+\ 'layout: post',
+\ 'title: "JEKYLL_TITLE"',
+\ 'date: "JEKYLL_DATE"',
+\ 'tags:',
+\  '-',
+\ '---',
+\ '']
+
 call dein#end()
 
 set background=dark
