@@ -1,4 +1,3 @@
-snippet imp
     import ${1}
     ${0}
 
@@ -23,3 +22,17 @@ options head
             ${0}
         }
     }
+
+snippet desc
+options head
+abbr	describe(...) ...
+	describe ("${1}") {
+		${0}
+	}
+
+snippet it
+options head
+abbr	it(...) ...
+	it ("${1}") {
+		${0}
+	}
