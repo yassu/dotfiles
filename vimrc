@@ -111,8 +111,8 @@ let g:jekyll_post_template = [
 call dein#end()
 
 set background=dark
-if dein#tap('nofrils')
-    colorscheme nofrils-dark
+if dein#tap('hybrid')
+    colorscheme hybrid
 else
     colorscheme desert
 endif
@@ -415,4 +415,4 @@ nmap <space>l :set list!<cr>
 nmap <space>z :on<cr>
 " }}}
 
-syntax on
+syntax off
