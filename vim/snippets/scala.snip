@@ -1,8 +1,5 @@
-snippet for
-abbr for () ...
-options head
-    for (${1:cond})
-        ${0}
+    import ${1}
+    ${0}
 
 snippet cls
 abbt class ...
@@ -18,50 +15,24 @@ options head
         ${0}
     }
 
-snippet def
-abbr def funcname=...
+snippet main
 options head
-    def ${1:#name} = ${0}
-
-snippet def:
-abbr def funcname: ... =...
-options head
-    def ${1:#name}: ${2} = ${0}
-
-snippet def(
-abbr def funcname(...)=...
-options head
-    def ${1:#name}(${2}) = ${0}
-
-snippet def(:
-abbr def funcname(...): ... =...
-options head
-    def ${1:#name}(${2}): ${3} = ${0}
-
-snippet def{
-abbr def funcname(...)=...
-options head
-    def ${1:#name} = {
-        ${0}
+    object ${1} {
+        def main(args: Array[String]) {
+            ${0}
+        }
     }
 
-snippet def:{
-abbr def funcname(...)= { ...
+snippet desc
 options head
-    def ${1:#name}: ${2} = {
-        ${0}
-    }
+abbr	describe(...) ...
+	describe ("${1}") {
+		${0}
+	}
 
-snippet def({
-abbr def funcname(...)= {...
+snippet it
 options head
-    def ${1:#name}(${2:#args}) = {
-        ${0}
-    }
-
-snippet def(:{
-abbr def funcname(...): ... = {...
-options head
-    def ${1:#name}(${2:#args}): ${3} = {
-        ${0}
-    }
+abbr	it(...) ...
+	it ("${1}") {
+		${0}
+	}

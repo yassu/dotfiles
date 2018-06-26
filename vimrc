@@ -91,6 +91,23 @@ call dein#add('w0ng/vim-hybrid')
 call dein#add('chriskempson/vim-tomorrow-theme')
 call dein#add('gkjgh/cobalt')
 call dein#add('robertmeta/nofrils')
+call dein#add('easymotion/vim-easymotion')
+let g:EasyMotion_do_mapping = 0
+map  <Space>s <Plug>(easymotion-bd-f)
+nmap <Space>s <Plug>(easymotion-overwin-f)
+call dein#add('ntpeters/vim-better-whitespace')
+let g:strip_whitespace_on_save=1
+call dein#add('parkr/vim-jekyll')
+let g:jekyll_post_template = [
+\ '---',
+\ 'layout: post',
+\ 'title: "JEKYLL_TITLE"',
+\ 'date: "JEKYLL_DATE"',
+\ 'tags:',
+\  '-',
+\ '---',
+\ '']
+
 call dein#end()
 
 set background=dark
@@ -204,8 +221,9 @@ augroup Setting-Scala
 
   autocmd FileType scala setlocal textwidth=99
   autocmd FileType scala setlocal colorcolumn=100
-  autocmd FileType scala setlocal softtabstop=4
-  autocmd FileType scala setlocal shiftwidth=4
+  autocmd FileType scala setlocal softtabstop=2
+  autocmd FileType scala setlocal shiftwidth=2
+  autocmd FileType scala setlocal foldmethod=syntax
 augroup END
 " }}}
 
