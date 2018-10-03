@@ -2,6 +2,8 @@
     path = ~/.gitconfig.user
 [user]
   editor = vim
+	email = yassu0320.dev@gmail.com
+	name = yassu
 [push]
     default = current
 [core]

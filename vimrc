@@ -121,6 +121,7 @@ endif
 autocmd BufWinEnter,BufNewFile SConstruct set filetype=python
 autocmd BufWinEnter,BufNewFile *test*.py set filetype=python.test
 autocmd BufNewFile,BufRead *.tex  setfiletype tex
+autocmd BufNewFile,BufRead *.py  setfiletype python
 autocmd BufNewFile,BufRead *.go  setfiletype go
 autocmd BufNewFile,BufRead *.scala  setfiletype scala
 autocmd BufNewFile,BufRead *.sage setfiletype python
