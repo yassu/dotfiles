@@ -2,20 +2,21 @@ scriptencoding utf-8
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
 
-" dein Scripts-----------------------------                                                                                                                                                                                             [10/44]
-if &compatible
-  set nocompatible               " Be iMproved
+" set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+let s:dein_path = expand('~/.vim/dein')
+let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
+
+" dein.vim がなければ github からclone
+if &runtimepath !~# '/dein.vim'
+  if !isdirectory(s:dein_repo_path)
+    execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_path
+  endif
+  execute 'set runtimepath^=' . fnamemodify(s:dein_repo_path, ':p')
 endif
 
-" Required:
-set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
 if dein#load_state(expand('~/.vim/dein'))
     call dein#begin(expand('~/.vim/dein'))
 
-    " Let dein manage dein
-    " Required:
     call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('Shougo/unite.vim')
@@ -118,16 +119,12 @@ if dein#load_state(expand('~/.vim/dein'))
     \ '---',
     \ '']
 
-      " Required:
-      call dein#end()
-      call dein#save_state()
-    endif
+    call dein#end()
+    call dein#save_state()
+endif
 
-" Required:
 filetype plugin indent on
 syntax enable
-
-"End dein Scripts-------------------------
 
 set background=dark
 if dein#tap('hybrid')
@@ -193,8 +190,7 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/swp
 
 set expandtab
-set colorcolumn=80
-set textwidth=80
+set textwidth=0
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
