@@ -100,13 +100,17 @@ if dein#load_state(expand('~/.vim/dein'))
     omap i_ <Plug>(textobj-between-i)_
     vmap a_ <Plug>(textobj-between-a)_
     omap a_ <Plug>(textobj-between-a)_
+    call dein#add('vim-scripts/twilight256.vim')
+    call dein#add('sjl/badwolf')
     call dein#add('w0ng/vim-hybrid')
+    call dein#add('chriskempson/vim-tomorrow-theme')
+    call dein#add('gkjgh/cobalt')
+    call dein#add('robertmeta/nofrils')
     call dein#add('easymotion/vim-easymotion')
     let g:EasyMotion_do_mapping = 0
     map  <Leader>s <Plug>(easymotion-bd-f)
     nmap <Leader>s <Plug>(easymotion-overwin-f)
     call dein#add('ntpeters/vim-better-whitespace')
-    let g:extra_whitespace_ignored_filetypes = ['help']
     let g:strip_whitespace_on_save=1
     call dein#add('parkr/vim-jekyll')
     let g:jekyll_post_template = [
