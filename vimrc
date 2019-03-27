@@ -22,10 +22,12 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('Shougo/unite.vim')
+
     call dein#add('Shougo/neomru.vim')
     if dein#tap('neomru.vim')
         nnoremap <Leader>M :Unite file_mru<cr>
     endif
+    nnoremap <Leader>f :Unite file_rec<cr>
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-operator-user')
     call dein#add('kana/vim-textobj-indent')
