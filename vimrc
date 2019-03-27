@@ -2,6 +2,8 @@ scriptencoding utf-8
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
 
+let mapleader = "\<Space>"
+
 " dein {{{
 let s:dein_path = expand('~/.vim/dein')
 let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
@@ -22,7 +24,7 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#add('Shougo/unite.vim')
     call dein#add('Shougo/neomru.vim')
     if dein#tap('neomru.vim')
-        nnoremap <Space>M :Unite file_mru<cr>
+        nnoremap <Leader>M :Unite file_mru<cr>
     endif
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-operator-user')
@@ -60,16 +62,16 @@ if dein#load_state(expand('~/.vim/dein'))
     let g:memolist_unite_option = "-auto-preview"
     let g:memolist_unite_source = "file_rec"
     let g:memolist_path = "~/Dropbox/memo/"
-    nnoremap <Space>mn  :MemoNew memo<CR>
-    nnoremap <Space>ml  :MemoList<CR>
-    nnoremap <Space>mg  :MemoGrep<CR>
+    nnoremap <Leader>mn  :MemoNew memo<CR>
+    nnoremap <Leader>ml  :MemoList<CR>
+    nnoremap <Leader>mg  :MemoGrep<CR>
     call dein#add('danro/rename.vim')
     call dein#add('tomtom/tcomment_vim')
     call dein#add('thaerkh/vim-workspace')
     let g:workspace_autocreate =0
     let g:workspace_autosave_always = 0
     let g:workspace_autosave = 0
-    nnoremap <Space>s :ToggleWorkspace<CR>
+    nnoremap <Leader>s :ToggleWorkspace<CR>
     if v:version >= 800
         call dein#add('lambdalisue/gina.vim')
     endif
@@ -90,7 +92,7 @@ if dein#load_state(expand('~/.vim/dein'))
     \ }
     call dein#add('thinca/vim-quickrun')
     let quickrun_no_default_key_mappings = 0
-    silent! map <unique> <Space>r <Plug>(quickrun)
+    silent! map <unique> <Leader>r <Plug>(quickrun)
     call dein#add('thinca/vim-textobj-plugins')
     vmap i_ <Plug>(textobj-between-i)_
     omap i_ <Plug>(textobj-between-i)_
@@ -104,8 +106,8 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#add('robertmeta/nofrils')
     call dein#add('easymotion/vim-easymotion')
     let g:EasyMotion_do_mapping = 0
-    map  <Space>s <Plug>(easymotion-bd-f)
-    nmap <Space>s <Plug>(easymotion-overwin-f)
+    map  <Leader>s <Plug>(easymotion-bd-f)
+    nmap <Leader>s <Plug>(easymotion-overwin-f)
     call dein#add('ntpeters/vim-better-whitespace')
     let g:strip_whitespace_on_save=1
     call dein#add('parkr/vim-jekyll')
