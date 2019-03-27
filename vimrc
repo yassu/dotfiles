@@ -2,7 +2,7 @@ scriptencoding utf-8
 set encoding=utf-8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
 
-" set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+" dein {{{
 let s:dein_path = expand('~/.vim/dein')
 let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
 
@@ -22,7 +22,7 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#add('Shougo/unite.vim')
     call dein#add('Shougo/neomru.vim')
     if dein#tap('neomru.vim')
-        nnoremap <Space><S-M> :Unite file_mru<cr>
+        nnoremap <Space>M :Unite file_mru<cr>
     endif
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-operator-user')
@@ -125,6 +125,7 @@ endif
 
 filetype plugin indent on
 syntax enable
+" }}}
 
 set background=dark
 if dein#tap('hybrid')
@@ -425,7 +426,6 @@ nnoremap <silent>d\ d$
 nnoremap <silent>D  ^d$
 nnoremap <silent>c$ d$a
 nnoremap <silent>c\ c$
-" }}}
 
 nmap <space>l :set list!<cr>
 nmap <space>z :on<cr>
