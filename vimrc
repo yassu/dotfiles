@@ -384,12 +384,11 @@ endfunction
 " }}}
 
 " underline {{{
-function! s:drawUnderLine(...)
-    let l:sep = get(a:, 1, '=')
-    call append('.', repeat(l:sep, len(getline('.')) + 2))
+function! s:drawUnderLine(c)
+    call append('.', repeat(a:c, len(getline('.')) + 2))
 endfunction
 command! -nargs=? UnderLine call s:drawUnderLine(<f-args>)
-nnoremap <leader>u :UnderLine<cr>
+nnoremap <leader>u :UnderLine =<cr>
 nnoremap <leader>U :UnderLine<space>
 " }}}
 
