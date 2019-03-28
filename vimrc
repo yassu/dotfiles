@@ -27,7 +27,6 @@ if dein#load_state(expand('~/.vim/dein'))
     if dein#tap('neomru.vim')
         nnoremap <Leader>M :Unite file_mru<cr>
     endif
-    nnoremap <Leader>f :Unite file_rec<cr>
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-operator-user')
     call dein#add('kana/vim-textobj-indent')
@@ -122,6 +121,11 @@ if dein#load_state(expand('~/.vim/dein'))
     \  '-',
     \ '---',
     \ '']
+
+    call dein#add('cocopon/vaffle.vim')
+    let g:vaffle_show_hidden_files = 1
+    nnoremap <leader>f :Vaffle<cr>
+    nnoremap <leader>F :tabnew<cr>:Vaffle<cr>
 
     call dein#end()
     call dein#save_state()
