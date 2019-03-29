@@ -412,6 +412,7 @@ nnoremap <space>. :e ~/.vimrc<cr>
 nnoremap <space>. :tabnew      ~/dotfiles/vimrc<cr>
 nnoremap <space>? :source ~/dotfiles/vimrc<cr>
 nnoremap <c-n> <c-a><c-x>
+nnoremap <leader>n /\d\d\d\d\/\d\d\/\d\d.*\n===<cr>
 " }}
 " normal mode {{{
 nnoremap <Space>h :<c-u>help<Space>
