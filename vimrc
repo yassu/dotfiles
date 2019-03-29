@@ -18,87 +18,28 @@ endif
 
 if dein#load_state(expand('~/.vim/dein'))
     call dein#begin(expand('~/.vim/dein'))
-
     call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('Shougo/unite.vim')
-
     call dein#add('Shougo/neomru.vim')
-    if dein#tap('neomru.vim')
-        nnoremap <Leader>M :Unite file_mru<cr>
-    endif
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-operator-user')
     call dein#add('kana/vim-textobj-indent')
     call dein#add('Shougo/neosnippet')
     call dein#add('Shougo/neosnippet-snippets')
-    let g:neosnippet#snippets_directory = '~/.vim/snippets/'
-    let g:neosnippet#disable_runtime_snippets = {
-    \   '_' : 1,
-    \ }
-
-    " Plugin key-mappings.
-    imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-    xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-    " SuperTab like snippets behavior.
-    "imap <expr><TAB>
-    " \ pumvisible() ? "\<C-n>" :
-    " \ neosnippet#expandable_or_jumpable() ?
-    " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-    \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-    " For conceal markers.
-    if has('conceal')
-        set conceallevel=2 concealcursor=niv
-    endif
-
-    "set snippet file dir
-    let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
     call dein#add('kana/vim-textobj-entire')
     call dein#add('glidenote/memolist.vim')
-    let g:memolist_unite = 1
-    let g:memolist_unite_option = "-auto-preview"
-    let g:memolist_unite_source = "file_rec"
-    let g:memolist_path = "~/Dropbox/memo/"
-    nnoremap <Leader>mn  :MemoNew memo<CR>
-    nnoremap <Leader>ml  :MemoList<CR>
-    nnoremap <Leader>mg  :MemoGrep<CR>
     call dein#add('danro/rename.vim')
     call dein#add('tomtom/tcomment_vim')
     call dein#add('thaerkh/vim-workspace')
-    let g:workspace_autocreate =0
-    let g:workspace_autosave_always = 0
-    let g:workspace_autosave = 0
-    nnoremap <Leader>s :ToggleWorkspace<CR>
     if v:version >= 800
         call dein#add('lambdalisue/gina.vim')
     endif
     call dein#add('vim-jp/vimdoc-ja')
     set helplang=ja,en
-
-    " g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-
     call dein#add('rhysd/vim-operator-surround')
-    map <silent>sa <Plug>(operator-surround-append)
-    map <silent>sd <Plug>(operator-surround-delete)
-    map <silent>sr <Plug>(operator-surround-replace)
-    let g:operator#surround#blocks =
-    \ {
-    \   '-' : [
-    \       { 'block' : ['"""', '"""'], 'motionwise' : ['char', 'line', 'block'], 'keys' : ['@'] },
-    \   ]
-    \ }
     call dein#add('thinca/vim-quickrun')
-    let quickrun_no_default_key_mappings = 0
-    silent! map <unique> <Leader>r <Plug>(quickrun)
     call dein#add('thinca/vim-textobj-plugins')
-    vmap i_ <Plug>(textobj-between-i)_
-    omap i_ <Plug>(textobj-between-i)_
-    vmap a_ <Plug>(textobj-between-a)_
-    omap a_ <Plug>(textobj-between-a)_
     call dein#add('vim-scripts/twilight256.vim')
     call dein#add('sjl/badwolf')
     call dein#add('w0ng/vim-hybrid')
@@ -106,33 +47,98 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#add('gkjgh/cobalt')
     call dein#add('robertmeta/nofrils')
     call dein#add('easymotion/vim-easymotion')
-    let g:EasyMotion_do_mapping = 0
-    map  <Leader>s <Plug>(easymotion-bd-f)
-    nmap <Leader>s <Plug>(easymotion-overwin-f)
     call dein#add('ntpeters/vim-better-whitespace')
-    let g:strip_whitespace_on_save=1
     call dein#add('parkr/vim-jekyll')
-    let g:jekyll_post_template = [
-    \ '---',
-    \ 'layout: post',
-    \ 'title: "JEKYLL_TITLE"',
-    \ 'date: "JEKYLL_DATE"',
-    \ 'tags:',
-    \  '-',
-    \ '---',
-    \ '']
-
     call dein#add('cocopon/vaffle.vim')
-    let g:vaffle_show_hidden_files = 1
-    nnoremap <leader>f :Vaffle<cr>
-    nnoremap <leader>F :tabnew<cr>:Vaffle<cr>
-
     call dein#end()
     call dein#save_state()
 endif
 
+nnoremap <Leader>M :Unite file_mru<cr>
+
+let g:neosnippet#snippets_directory = '~/.vim/snippets/'
+let g:neosnippet#disable_runtime_snippets = {
+\   '_' : 1,
+\ }
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+    set conceallevel=2 concealcursor=niv
+endif
+
+"set snippet file dir
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
+
+let g:memolist_unite = 1
+let g:memolist_unite_option = "-auto-preview"
+let g:memolist_unite_source = "file_rec"
+let g:memolist_path = "~/Dropbox/memo/"
+nnoremap <Leader>mn  :MemoNew memo<CR>
+nnoremap <Leader>ml  :MemoList<CR>
+nnoremap <Leader>mg  :MemoGrep<CR>
+
+let g:workspace_autocreate =0
+let g:workspace_autosave_always = 0
+let g:workspace_autosave = 0
+nnoremap <Leader>s :ToggleWorkspace<CR>
+
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
+let g:operator#surround#blocks =
+\ {
+\   '-' : [
+\       { 'block' : ['"""', '"""'], 'motionwise' : ['char', 'line', 'block'], 'keys' : ['@'] },
+\   ]
+\ }
+
+let quickrun_no_default_key_mappings = 0
+silent! map <unique> <Leader>r <Plug>(quickrun)
+
+vmap i_ <Plug>(textobj-between-i)_
+omap i_ <Plug>(textobj-between-i)_
+vmap a_ <Plug>(textobj-between-a)_
+omap a_ <Plug>(textobj-between-a)_
+
+let g:EasyMotion_do_mapping = 0
+map  <Leader>s <Plug>(easymotion-bd-f)
+nmap <Leader>s <Plug>(easymotion-overwin-f)
+
+let g:strip_whitespace_on_save=1
+
+let g:jekyll_post_template = [
+\ '---',
+\ 'layout: post',
+\ 'title: "JEKYLL_TITLE"',
+\ 'date: "JEKYLL_DATE"',
+\ 'tags:',
+\  '-',
+\ '---',
+\ '']
+
+let g:vaffle_show_hidden_files = 1
+nnoremap <leader>f :Vaffle<cr>
+nnoremap <leader>F :tabnew<cr>:Vaffle<cr>
+
 filetype plugin indent on
 syntax enable
+
+if dein#check_install()
+  call dein#install()
+endif
 " }}}
 
 set background=dark
