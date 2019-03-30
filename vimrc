@@ -50,6 +50,7 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#add('ntpeters/vim-better-whitespace')
     call dein#add('parkr/vim-jekyll')
     call dein#add('cocopon/vaffle.vim')
+    call dein#add('w0rp/ale')
     call dein#end()
     call dein#save_state()
 endif
@@ -132,6 +133,18 @@ let g:jekyll_post_template = [
 let g:vaffle_show_hidden_files = 1
 nnoremap <leader>f :Vaffle<cr>
 nnoremap <leader>F :tabnew<cr>:Vaffle<cr>
+let g:ale_linters = {
+\   'javascript': ['eslint', 'eslint-plugin-vue'],
+\   'python': ['pyflakes', 'flake8', 'pep8'],
+\   'ruby': ['rubocop'],
+\   'tex': ['textlint'],
+\   'markdown': ['textlint'],
+\   'css': ['stylelint'],
+\}
+let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+nmap <silent> <C-n> <Plug>(ale_next_wrap)
 
 filetype plugin indent on
 syntax enable
