@@ -370,6 +370,7 @@ augroup END
 
 " commands {{{
 command! Dog !shiba --detach %
+command! Cd :cd %:h
 " }}}
 
 set nrformats =
