@@ -20,7 +20,6 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#begin(expand('~/.vim/dein'))
     call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-    call dein#add('Shougo/unite.vim')
     call dein#add('Shougo/neomru.vim')
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-operator-user')
@@ -51,11 +50,10 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#add('parkr/vim-jekyll')
     call dein#add('cocopon/vaffle.vim')
     call dein#add('w0rp/ale')
+    call dein#add('ctrlpvim/ctrlp.vim')
     call dein#end()
     call dein#save_state()
 endif
-
-nnoremap <Leader>M :Unite file_mru<cr>
 
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 let g:neosnippet#disable_runtime_snippets = {
@@ -145,6 +143,8 @@ let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
+
+nnoremap <leader>M :<C-u>CtrlPMRUFiles<CR>
 
 filetype plugin indent on
 syntax enable
