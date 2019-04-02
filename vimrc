@@ -366,6 +366,14 @@ augroup Setting-Maxima
   autocmd FileType maxima setlocal shiftwidth=2
 augroup END
 " }}}
+
+" neosnippet {{{
+augroup Setting-NeoSnippet
+  autocmd!
+
+  autocmd FileType neosnippet setlocal noexpandtab
+augroup END
+" }}}
 " }}}
 
 " commands {{{
