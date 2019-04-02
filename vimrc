@@ -16,6 +16,7 @@ if &runtimepath !~# '/dein.vim'
   execute 'set runtimepath^=' . fnamemodify(s:dein_repo_path, ':p')
 endif
 
+" dein#add {{{
 if dein#load_state(expand('~/.vim/dein'))
     call dein#begin(expand('~/.vim/dein'))
     call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
@@ -54,7 +55,9 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#end()
     call dein#save_state()
 endif
+" }}}
 
+" {{{ plugin configure
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 let g:neosnippet#disable_runtime_snippets = {
 \   '_' : 1,
@@ -145,6 +148,7 @@ let g:ale_set_quickfix = 1
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
 
 nnoremap <leader>M :<C-u>CtrlPMRUFiles<CR>
+" }}}
 
 filetype plugin indent on
 syntax enable
