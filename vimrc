@@ -21,7 +21,6 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#begin(expand('~/.vim/dein'))
     call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
     call dein#add('Shougo/vimproc.vim', {'build': 'make'})
-    call dein#add('Shougo/neomru.vim')
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-operator-user')
     call dein#add('kana/vim-textobj-indent')
@@ -186,17 +185,7 @@ autocmd BufNewFile,BufRead *.md setfiletype markdown
 autocmd BufNewFile,BufRead *.mkd setfiletype markdown
 " }}}
 
-" json {{{
-augroup Setting-Json
-  autocmd!
-  autocmd FileType json setlocal conceallevel=0
-augroup END
-" }}}
-
 " system {{{
-set noswapfile
-set nobackup
-
 set conceallevel=0
 set number
 set relativenumber
@@ -218,6 +207,8 @@ if exists('&ambiwidth')
 endif
 set list listchars=tab:>>,trail:.
 
+set noswapfile
+set nobackup
 set noundofile
 set undodir=~/.vim/undo
 set backupdir=~/.vim/backup
@@ -228,6 +219,13 @@ set textwidth=0
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+
+" json {{{
+augroup Setting-Json
+  autocmd!
+  autocmd FileType json setlocal conceallevel=0
+augroup END
+" }}}
 
 " tex {{{
 let tex_conceal = ''
@@ -471,6 +469,7 @@ nnoremap <silent>c\ c$
 
 nmap <space>l :set list!<cr>
 nmap <space>z :on<cr>
+" }}}
 " }}}
 
 syntax off
