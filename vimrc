@@ -56,7 +56,7 @@ if dein#load_state(expand('~/.vim/dein'))
 endif
 " }}}
 
-" {{{ plugin configure
+" plugin configure {{{
 let g:neosnippet#snippets_directory = '~/.vim/snippets/'
 let g:neosnippet#disable_runtime_snippets = {
 \   '_' : 1,
