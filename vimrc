@@ -469,6 +469,7 @@ nnoremap <silent>c\ c$
 
 nmap <space>l :set list!<cr>
 nmap <space>z :on<cr>
+nmap <cr> za
 " }}}
 " }}}
 
