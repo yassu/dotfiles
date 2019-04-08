@@ -1,18 +1,18 @@
 private/
 
-vim/view/
-vim/.junk/
-vim/memo/
-vim/vim
-vim/colors/hydrangea.vim
-vim/ftplugin/go.vim
-vim/bin
-vim/bundle
-vim/spell
-vim/swp
-vim/undo
-vim/dein
-vim/.netrwhist
+_vim/view/
+_vim/.junk/
+_vim/memo/
+_vim/vim
+_vim/colors/hydrangea.vim
+_vim/ftplugin/go.vim
+_vim/bin
+_vim/bundle
+_vim/spell
+_vim/swp
+_vim/undo
+_vim/dein
+_vim/.netrwhist
 
 config/nvim/.netrwhist
 config/configstore/
