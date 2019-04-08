@@ -20,7 +20,6 @@ endif
 if dein#load_state(expand('~/.vim/dein'))
     call dein#begin(expand('~/.vim/dein'))
     call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
-    call dein#add('Shougo/vimproc.vim', {'build': 'make'})
     call dein#add('kana/vim-textobj-user')
     call dein#add('kana/vim-operator-user')
     call dein#add('kana/vim-textobj-indent')
@@ -151,10 +150,6 @@ nnoremap <leader>M :<C-u>CtrlPMRUFiles<CR>
 
 filetype plugin indent on
 syntax enable
-
-if dein#check_install()
-  call dein#install()
-endif
 " }}}
 
 set background=dark
