@@ -118,8 +118,8 @@ let g:EasyMotion_do_mapping = 0
 map  <Leader>s <Plug>(easymotion-bd-f)
 nmap <Leader>s <Plug>(easymotion-overwin-f)
 
+let g:strip_whitespace_confirm=0
 let g:strip_whitespace_on_save=1
-
 let g:jekyll_post_template = [
 \ '---',
 \ 'layout: post',
@@ -148,10 +148,12 @@ nmap <silent> <C-n> <Plug>(ale_next_wrap)
 
 nnoremap <leader>M :<C-u>CtrlPMRUFiles<CR>
 
-autocmd User plugin-template-loaded
-\    if search('<CURSOR>')
+function! s:loaded_plugin_template()
+    if search('<CURSOR>')
 \  |   execute 'normal! "_da>'
 \  | endif
+endfunction
+autocmd User plugin-template-loaded call s:loaded_plugin_template()
 " }}}
 
 filetype plugin indent on
