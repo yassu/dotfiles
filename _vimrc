@@ -50,6 +50,7 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#add('cocopon/vaffle.vim')
     call dein#add('w0rp/ale')
     call dein#add('ctrlpvim/ctrlp.vim')
+    call dein#add('thinca/vim-template')
     call dein#end()
     call dein#save_state()
 endif
@@ -146,6 +147,11 @@ let g:ale_set_quickfix = 1
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
 
 nnoremap <leader>M :<C-u>CtrlPMRUFiles<CR>
+
+autocmd User plugin-template-loaded
+\    if search('<CURSOR>')
+\  |   execute 'normal! "_da>'
+\  | endif
 " }}}
 
 filetype plugin indent on
