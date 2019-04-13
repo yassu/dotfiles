@@ -173,6 +173,7 @@ autocmd BufNewFile,BufRead *.markdown setfiletype markdown
 autocmd BufNewFile,BufRead *.plant setfiletype plantuml
 autocmd BufNewFile,BufRead *.puml setfiletype plantuml
 autocmd BufNewFile,BufRead *.iuml setfiletype plantuml
+autocmd BufNewFile,BufRead *.uml setfiletype plantuml
 autocmd BufNewFile,BufRead *.diag setfiletype blockdiag
 autocmd BufNewFile,BufRead *.max setfiletype maxima
 autocmd BufNewFile,BufRead *.gnu setfiletype gnuplot
@@ -270,15 +271,15 @@ augroup Setting-Scala
 augroup END
 " }}}
 
-" plant {{{
+" plantuml {{{
 augroup Setting-PlantUML
   autocmd!
 
-  autocmd FileType plant setlocal textwidth=99
-  autocmd FileType plant setlocal colorcolumn=100
-  autocmd FileType plant setlocal tabstop=2
-  autocmd FileType plant setlocal softtabstop=2
-  autocmd FileType plant setlocal shiftwidth=2
+  autocmd FileType plantuml setlocal textwidth=99
+  autocmd FileType plantuml setlocal colorcolumn=100
+  autocmd FileType plantuml setlocal tabstop=2
+  autocmd FileType plantuml setlocal softtabstop=2
+  autocmd FileType plantuml setlocal shiftwidth=2
 augroup END
 " }}}
 
