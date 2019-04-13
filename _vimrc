@@ -91,6 +91,11 @@ nnoremap <Leader>mn  :MemoNew memo<CR>
 nnoremap <Leader>ml  :MemoList<CR>
 nnoremap <Leader>mg  :MemoGrep<CR>
 
+if !exists('g:tcomment_types')
+    let g:tcomment_types = {}
+endif
+let g:tcomment_types['plantuml']="' %s"
+
 let g:workspace_autocreate =0
 let g:workspace_autosave_always = 0
 let g:workspace_autosave = 0
