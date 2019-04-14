@@ -209,3 +209,6 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=255
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=255
 '''
+
+[[plugins]]
+repo = 'thinca/vim-ft-markdown_fold'
