@@ -51,6 +51,7 @@ if dein#load_state(expand('~/.vim/dein'))
     call dein#add('w0rp/ale')
     call dein#add('ctrlpvim/ctrlp.vim')
     call dein#add('thinca/vim-template')
+    call dein#add('nathanaelkane/vim-indent-guides')
     call dein#end()
     call dein#save_state()
 endif
@@ -159,6 +160,13 @@ function! s:loaded_plugin_template()
 \  | endif
 endfunction
 autocmd User plugin-template-loaded call s:loaded_plugin_template()
+
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=255
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=255
 " }}}
 
 filetype plugin indent on
