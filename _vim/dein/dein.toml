@@ -1,0 +1,211 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'kana/vim-textobj-user'
+
+[[plugins]]
+repo = 'kana/vim-operator-user'
+
+[[plugins]]
+repo = 'kana/vim-textobj-indent'
+
+[[plugins]]
+repo = 'Shougo/neosnippet'
+hook_add = '''
+let g:neosnippet#snippets_directory = '~/.vim/snippets/'
+let g:neosnippet#disable_runtime_snippets = {
+\   '_' : 1,
+\ }
+
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+    set conceallevel=2 concealcursor=niv
+endif
+
+"set snippet file dir
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
+'''
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+[[plugins]]
+repo = 'kana/vim-textobj-entire'
+
+[[plugins]]
+repo = 'glidenote/memolist.vim'
+
+[[plugins]]
+repo = 'danro/rename.vim'
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+if !exists('g:tcomment_types')
+    let g:tcomment_types = {}
+endif
+let g:tcomment_types['plantuml']="' %s"
+'''
+
+
+[[plugins]]
+repo = 'thaerkh/vim-workspace'
+hook_add = '''
+let g:workspace_autocreate =0
+let g:workspace_autosave_always = 0
+let g:workspace_autosave = 0
+nnoremap <Leader>s :ToggleWorkspace<CR>
+'''
+
+[[plugins]]
+repo = 'lambdalisue/gina.vim'
+
+[[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+hook_add = '''
+set helplang=ja,en
+'''
+
+[[plugins]]
+repo = 'rhysd/vim-operator-surround'
+hook_add='''
+map <silent>sa <Plug>(operator-surround-append)
+map <silent>sd <Plug>(operator-surround-delete)
+map <silent>sr <Plug>(operator-surround-replace)
+let g:operator#surround#blocks =
+\ {
+\   '-' : [
+\       { 'block' : ['"""', '"""'], 'motionwise' : ['char', 'line', 'block'], 'keys' : ['@'] },
+\   ]
+\ }
+'''
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add='''
+let quickrun_no_default_key_mappings = 0
+silent! map <unique> <Leader>r <Plug>(quickrun)
+'''
+
+[[plugins]]
+repo = 'thinca/vim-textobj-plugins'
+hook_add='''
+vmap i_ <Plug>(textobj-between-i)_
+omap i_ <Plug>(textobj-between-i)_
+vmap a_ <Plug>(textobj-between-a)_
+omap a_ <Plug>(textobj-between-a)_
+'''
+
+[[plugins]]
+repo = 'vim-scripts/twilight256.vim'
+
+[[plugins]]
+repo = 'sjl/badwolf'
+
+[[plugins]]
+repo = 'w0ng/vim-hybrid'
+
+[[plugins]]
+repo = 'chriskempson/vim-tomorrow-theme'
+
+[[plugins]]
+repo = 'gkjgh/cobalt'
+
+[[plugins]]
+repo = 'robertmeta/nofrils'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add='''
+let g:EasyMotion_do_mapping = 0
+map  <Leader>s <Plug>(easymotion-bd-f)
+nmap <Leader>s <Plug>(easymotion-overwin-f)
+'''
+
+[[plugins]]
+repo = 'ntpeters/vim-better-whitespace'
+hook_add='''
+let g:strip_whitespace_confirm=0
+let g:strip_whitespace_on_save=1
+'''
+
+[[plugins]]
+repo = 'parkr/vim-jekyll'
+hook_add='''
+let g:jekyll_post_template = [
+\ '---',
+\ 'layout: post',
+\ 'title: "JEKYLL_TITLE"',
+\ 'date: "JEKYLL_DATE"',
+\ 'tags:',
+\  '-',
+\ '---',
+\ '']
+'''
+
+[[plugins]]
+repo = 'cocopon/vaffle.vim'
+hook_add='''
+let g:vaffle_show_hidden_files = 1
+nnoremap <leader>f :Vaffle<cr>
+nnoremap <leader>F :tabnew<cr>:Vaffle<cr>
+'''
+
+[[plugins]]
+repo = 'w0rp/ale'
+hook_add='''
+let g:ale_linters = {
+\   'javascript': ['eslint', 'eslint-plugin-vue'],
+\   'python': ['pyflakes', 'flake8', 'pep8'],
+\   'ruby': ['rubocop'],
+\   'tex': ['textlint'],
+\   'markdown': ['textlint'],
+\   'css': ['stylelint'],
+\}
+let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+nmap <silent> <C-n> <Plug>(ale_next_wrap)
+'''
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add='''
+nnoremap <leader>M :<C-u>CtrlPMRUFiles<CR>
+'''
+
+[[plugins]]
+repo = 'thinca/vim-template'
+hook_add='''
+function! s:loaded_plugin_template()
+    if search('<CURSOR>')
+\  |   execute 'normal! "_da>'
+\  | endif
+endfunction
+autocmd User plugin-template-loaded call s:loaded_plugin_template()
+'''
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+hook_add='''
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=255
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=255
+'''
