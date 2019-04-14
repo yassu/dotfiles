@@ -5,10 +5,9 @@ set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
 let mapleader = "\<Space>"
 
 " dein {{{
+" dein.vim がなければ github からclone
 let s:dein_path = expand('~/.vim/dein')
 let s:dein_repo_path = s:dein_path . '/repos/github.com/Shougo/dein.vim'
-
-" dein.vim がなければ github からclone
 if &runtimepath !~# '/dein.vim'
   if !isdirectory(s:dein_repo_path)
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_path
@@ -20,153 +19,13 @@ endif
 if dein#load_state(expand('~/.vim/dein'))
     call dein#begin(expand('~/.vim/dein'))
     call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
-    call dein#add('kana/vim-textobj-user')
-    call dein#add('kana/vim-operator-user')
-    call dein#add('kana/vim-textobj-indent')
-    call dein#add('Shougo/neosnippet')
-    call dein#add('Shougo/neosnippet-snippets')
-    call dein#add('kana/vim-textobj-entire')
-    call dein#add('glidenote/memolist.vim')
-    call dein#add('danro/rename.vim')
-    call dein#add('tomtom/tcomment_vim')
-    call dein#add('thaerkh/vim-workspace')
-    if v:version >= 800
-        call dein#add('lambdalisue/gina.vim')
-    endif
-    call dein#add('vim-jp/vimdoc-ja')
-    set helplang=ja,en
-    call dein#add('rhysd/vim-operator-surround')
-    call dein#add('thinca/vim-quickrun')
-    call dein#add('thinca/vim-textobj-plugins')
-    call dein#add('vim-scripts/twilight256.vim')
-    call dein#add('sjl/badwolf')
-    call dein#add('w0ng/vim-hybrid')
-    call dein#add('chriskempson/vim-tomorrow-theme')
-    call dein#add('gkjgh/cobalt')
-    call dein#add('robertmeta/nofrils')
-    call dein#add('easymotion/vim-easymotion')
-    call dein#add('ntpeters/vim-better-whitespace')
-    call dein#add('parkr/vim-jekyll')
-    call dein#add('cocopon/vaffle.vim')
-    call dein#add('w0rp/ale')
-    call dein#add('ctrlpvim/ctrlp.vim')
-    call dein#add('thinca/vim-template')
-    call dein#add('nathanaelkane/vim-indent-guides')
+
+    let s:toml = s:dein_path . '/dein.toml'
+    call dein#load_toml(s:toml, {'lazy': 0})
+
     call dein#end()
     call dein#save_state()
 endif
-" }}}
-
-" plugin configure {{{
-let g:neosnippet#snippets_directory = '~/.vim/snippets/'
-let g:neosnippet#disable_runtime_snippets = {
-\   '_' : 1,
-\ }
-
-" Plugin key-mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-"imap <expr><TAB>
-" \ pumvisible() ? "\<C-n>" :
-" \ neosnippet#expandable_or_jumpable() ?
-" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" For conceal markers.
-if has('conceal')
-    set conceallevel=2 concealcursor=niv
-endif
-
-"set snippet file dir
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets/snippets/,~/.vim/snippets'
-
-let g:memolist_unite = 1
-let g:memolist_unite_option = "-auto-preview"
-let g:memolist_unite_source = "file_rec"
-let g:memolist_path = "~/Dropbox/memo/"
-nnoremap <Leader>mn  :MemoNew memo<CR>
-nnoremap <Leader>ml  :MemoList<CR>
-nnoremap <Leader>mg  :MemoGrep<CR>
-
-if !exists('g:tcomment_types')
-    let g:tcomment_types = {}
-endif
-let g:tcomment_types['plantuml']="' %s"
-
-let g:workspace_autocreate =0
-let g:workspace_autosave_always = 0
-let g:workspace_autosave = 0
-nnoremap <Leader>s :ToggleWorkspace<CR>
-
-map <silent>sa <Plug>(operator-surround-append)
-map <silent>sd <Plug>(operator-surround-delete)
-map <silent>sr <Plug>(operator-surround-replace)
-let g:operator#surround#blocks =
-\ {
-\   '-' : [
-\       { 'block' : ['"""', '"""'], 'motionwise' : ['char', 'line', 'block'], 'keys' : ['@'] },
-\   ]
-\ }
-
-let quickrun_no_default_key_mappings = 0
-silent! map <unique> <Leader>r <Plug>(quickrun)
-
-vmap i_ <Plug>(textobj-between-i)_
-omap i_ <Plug>(textobj-between-i)_
-vmap a_ <Plug>(textobj-between-a)_
-omap a_ <Plug>(textobj-between-a)_
-
-let g:EasyMotion_do_mapping = 0
-map  <Leader>s <Plug>(easymotion-bd-f)
-nmap <Leader>s <Plug>(easymotion-overwin-f)
-
-let g:strip_whitespace_confirm=0
-let g:strip_whitespace_on_save=1
-let g:jekyll_post_template = [
-\ '---',
-\ 'layout: post',
-\ 'title: "JEKYLL_TITLE"',
-\ 'date: "JEKYLL_DATE"',
-\ 'tags:',
-\  '-',
-\ '---',
-\ '']
-
-let g:vaffle_show_hidden_files = 1
-nnoremap <leader>f :Vaffle<cr>
-nnoremap <leader>F :tabnew<cr>:Vaffle<cr>
-let g:ale_linters = {
-\   'javascript': ['eslint', 'eslint-plugin-vue'],
-\   'python': ['pyflakes', 'flake8', 'pep8'],
-\   'ruby': ['rubocop'],
-\   'tex': ['textlint'],
-\   'markdown': ['textlint'],
-\   'css': ['stylelint'],
-\}
-let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
-let g:ale_set_loclist = 0
-let g:ale_set_quickfix = 1
-nmap <silent> <C-n> <Plug>(ale_next_wrap)
-
-nnoremap <leader>M :<C-u>CtrlPMRUFiles<CR>
-
-function! s:loaded_plugin_template()
-    if search('<CURSOR>')
-\  |   execute 'normal! "_da>'
-\  | endif
-endfunction
-autocmd User plugin-template-loaded call s:loaded_plugin_template()
-
-let g:indent_guides_enable_on_vim_startup = 1
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=255
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=255
 " }}}
 
 filetype plugin indent on
