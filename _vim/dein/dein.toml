@@ -207,3 +207,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=white
 
 [[plugins]]
 repo = 'thinca/vim-ft-markdown_fold'
+
+[[plugins]]
+repo = 'vim-scripts/python_fold'
