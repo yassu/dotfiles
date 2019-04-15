@@ -65,6 +65,8 @@ autocmd BufNewFile,BufRead *.mkd setfiletype markdown
 set conceallevel=0
 set number
 set relativenumber
+set cursorline
+highlight CursorLine ctermbg=235
 set visualbell t_vb=
 set mouse-=a
 set noequalalways
