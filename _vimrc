@@ -308,8 +308,8 @@ nnoremap <RIGHT> <NOP>
 nnoremap <LEFT>  <NOP>
 nnoremap <UP>    <NOP>
 nnoremap <DOWN>  <NOP>
-nnoremap L :cnext<cr>
-nnoremap H :cprev<cr>
+nnoremap L gt
+nnoremap H gT
 " }}}
 " vimrc {{
 nnoremap <space>. :e ~/.vimrc<cr>
