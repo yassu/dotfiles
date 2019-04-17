@@ -59,6 +59,7 @@ autocmd BufNewFile,BufRead *.max setfiletype maxima
 autocmd BufNewFile,BufRead *.gnu setfiletype gnuplot
 autocmd BufNewFile,BufRead *.md setfiletype markdown
 autocmd BufNewFile,BufRead *.mkd setfiletype markdown
+autocmd BufNewFile,BufRead *.toml setfiletype toml
 " }}}
 
 " system {{{
