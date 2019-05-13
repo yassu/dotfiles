@@ -211,3 +211,9 @@ repo = 'thinca/vim-ft-markdown_fold'
 
 [[plugins]]
 repo = 'vim-scripts/python_fold'
+
+[[plugins]]
+repo = 'davidhalter/jedi-vim'
+hook_add='''
+  autocmd FileType python setlocal completeopt-=preview
+'''
