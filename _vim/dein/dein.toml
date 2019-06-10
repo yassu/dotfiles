@@ -217,3 +217,9 @@ repo = 'davidhalter/jedi-vim'
 hook_add='''
   autocmd FileType python setlocal completeopt-=preview
 '''
+
+[[plugins]]
+repo = 'python/black'
+hook_add='''
+  autocmd BufWritePre *.py execute ':Black'
+'''
