@@ -172,8 +172,8 @@ augroup END
 augroup Setting-Python
   autocmd!
 
-  autocmd FileType python,python.test setlocal textwidth=79
-  autocmd FileType python,python.test setlocal colorcolumn=80
+  autocmd FileType python,python.test setlocal textwidth=99
+  autocmd FileType python,python.test setlocal colorcolumn=100
   autocmd FileType python,python.test setlocal tabstop=4
   autocmd FileType python,python.test setlocal softtabstop=4
   autocmd FileType python,python.test setlocal shiftwidth=4
