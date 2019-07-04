@@ -224,6 +224,3 @@ repo = 'python/black'
 hook_add='''
   autocmd BufWritePre *.py execute ':Black'
 '''
-
-[[plugins]]
-repo = 'fisadev/vim-isort'
