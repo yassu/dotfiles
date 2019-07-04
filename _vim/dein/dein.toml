@@ -176,6 +176,7 @@ let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
+autocmd FileType python,python.test nnoremap <leader>a :ALEToggle<cr>
 '''
 
 [[plugins]]
