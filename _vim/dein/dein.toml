@@ -214,12 +214,6 @@ repo = 'thinca/vim-ft-markdown_fold'
 repo = 'vim-scripts/python_fold'
 
 [[plugins]]
-repo = 'davidhalter/jedi-vim'
-hook_add='''
-  autocmd FileType python setlocal completeopt-=preview
-'''
-
-[[plugins]]
 repo = 'python/black'
 hook_add='''
   autocmd BufWritePre *.py execute ':Black'
