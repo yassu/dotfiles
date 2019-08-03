@@ -14,6 +14,8 @@ _vim/undo
 _vim/dein
 _vim/.netrwhist
 
+_config/nvim/.netrwhist
+
 config/nvim/.netrwhist
 config/configstore/
 config/gtk-*/
