@@ -316,8 +316,8 @@ nnoremap H gT
 " }}}
 " vimrc {{
 nnoremap <space>. :e ~/.vimrc<cr>
-nnoremap <space>. :tabnew      ~/dotfiles/vimrc<cr>
-nnoremap <space>? :source ~/dotfiles/vimrc<cr>
+nnoremap <space>. :tabnew      ~/.vimrc<cr>
+nnoremap <space>? :source ~/.vimrc<cr>
 nnoremap <c-n> <c-a><c-x>
 nnoremap <leader>n /\d\d\d\d\/\d\d\/\d\d.*\n===<cr>
 " }}
