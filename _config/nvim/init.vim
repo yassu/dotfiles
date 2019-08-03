@@ -208,8 +208,7 @@ set ignorecase
 set scrolloff=3
 set wildmode=list:longest
 set laststatus=2
-set statusline=%F%m%r%h%w:\[TYPE=%Y]:\[POS=%04l,%04v]
-set statusline+=:[%p%%]
+set statusline=%F%m%r%h%w:\[TYPE=%Y]:\[POS=%04l,%04v](%{gina#component#repo#branch()})
 set incsearch
 set foldmethod=marker
 
