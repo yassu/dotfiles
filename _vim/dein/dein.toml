@@ -212,3 +212,15 @@ repo = 'thinca/vim-ft-markdown_fold'
 
 [[plugins]]
 repo = 'vim-scripts/python_fold'
+
+[[plugins]]
+repo = 'lucapette/vim-textobj-underscore'
+
+[[plugins]]
+repo = 'osyo-manga/vim-textobj-multiblock'
+hook_add='''
+omap ab <Plug>(textobj-multiblock-a)
+omap ib <Plug>(textobj-multiblock-i)
+vmap ab <Plug>(textobj-multiblock-a)
+vmap ib <Plug>(textobj-multiblock-i)
+'''
