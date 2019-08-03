@@ -219,8 +219,8 @@ repo = 'lucapette/vim-textobj-underscore'
 [[plugins]]
 repo = 'osyo-manga/vim-textobj-multiblock'
 hook_add='''
-omap ab <Plug>(textobj-multiblock-a)
-omap ib <Plug>(textobj-multiblock-i)
-vmap ab <Plug>(textobj-multiblock-a)
-vmap ib <Plug>(textobj-multiblock-i)
+omap a; <Plug>(textobj-multiblock-a)
+omap i; <Plug>(textobj-multiblock-i)
+vmap a; <Plug>(textobj-multiblock-a)
+vmap i; <Plug>(textobj-multiblock-i)
 '''
