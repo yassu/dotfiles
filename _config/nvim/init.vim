@@ -166,6 +166,10 @@ omap i; <Plug>(textobj-multiblock-i)
 vmap a; <Plug>(textobj-multiblock-a)
 vmap i; <Plug>(textobj-multiblock-i)
 
+Plug 't9md/vim-quickhl'
+" カーソル下のハイライトをトグルする
+nmap <leader>m <Plug>(quickhl-manual-this)
+
 call plug#end()"
 " }}}
 
