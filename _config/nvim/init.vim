@@ -489,6 +489,5 @@ nmap <space>z :on<cr>
 nmap <cr> za
 " }}}
 " }}}
-"
 
 syntax off
