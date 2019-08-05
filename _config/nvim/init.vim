@@ -166,6 +166,11 @@ omap i; <Plug>(textobj-multiblock-i)
 vmap a; <Plug>(textobj-multiblock-a)
 vmap i; <Plug>(textobj-multiblock-i)
 
+Plug 'simeji/winresizer'
+let g:winresizer_start_key='<c-s>'
+let g:winresizer_vert_resize = 3
+let g:winresizer_horiz_resize = 3
+
 call plug#end()"
 " }}}
 
