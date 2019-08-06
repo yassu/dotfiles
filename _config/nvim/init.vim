@@ -171,7 +171,11 @@ let g:winresizer_start_key='<c-s>'
 let g:winresizer_vert_resize = 3
 let g:winresizer_horiz_resize = 3
 
-call plug#end()"
+Plug 'kana/vim-operator-replace'
+map R <Plug>(operator-replace)
+
+call plug#end()
+
 " }}}
 
 set background=dark
