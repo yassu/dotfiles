@@ -173,6 +173,11 @@ xmap <leader><space> <Plug>(quickhl-manual-reset)
 nmap <leader>m <Plug>(quickhl-manual-reset)
 xmap <leader>m <Plug>(quickhl-manual-reset)
 
+Plug 'simeji/winresizer'
+let g:winresizer_start_key='<c-s>'
+let g:winresizer_vert_resize = 3
+let g:winresizer_horiz_resize = 3
+
 call plug#end()"
 " }}}
 
