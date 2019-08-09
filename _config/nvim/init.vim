@@ -177,7 +177,18 @@ let g:winresizer_start_key='<c-s>'
 let g:winresizer_vert_resize = 3
 let g:winresizer_horiz_resize = 3
 
-call plug#end()"
+Plug 'kana/vim-operator-replace'
+map R <Plug>(operator-replace)
+
+Plug 'vim-scripts/taglist.vim'
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"  " ctagsのコマンド
+let Tlist_Show_One_File = 1                         " 現在表示中のファイルのみのタグしか表示しない
+" let Tlist_Use_Right_Window = 1                    " 右側にtag listのウインドうを表示する
+let Tlist_Exit_OnlyWindow = 1                      " taglistのウインドウだけならVimを閉じる
+map <silent> <leader>t :TlistToggle<CR>      " \lでtaglistウインドウを開いたり閉じたり出来るショートカット
+
+call plug#end()
+
 " }}}
 
 set background=dark
