@@ -175,13 +175,6 @@ let g:winresizer_horiz_resize = 3
 Plug 'kana/vim-operator-replace'
 map R <Plug>(operator-replace)
 
-Plug 'vim-scripts/taglist.vim'
-let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"  " ctagsのコマンド
-let Tlist_Show_One_File = 1                         " 現在表示中のファイルのみのタグしか表示しない
-" let Tlist_Use_Right_Window = 1                    " 右側にtag listのウインドうを表示する
-let Tlist_Exit_OnlyWindow = 1                      " taglistのウインドウだけならVimを閉じる
-map <silent> <leader>t :TlistToggle<CR>      " \lでtaglistウインドウを開いたり閉じたり出来るショートカット
-
 Plug 'AndrewRadev/switch.vim'
 let g:switch_mapping = "<leader>s"
 
