@@ -166,6 +166,13 @@ omap i; <Plug>(textobj-multiblock-i)
 vmap a; <Plug>(textobj-multiblock-a)
 vmap i; <Plug>(textobj-multiblock-i)
 
+Plug 't9md/vim-quickhl'
+" カーソル下のハイライトをトグルする
+nmap <leader><space> <Plug>(quickhl-manual-this)
+xmap <leader><space> <Plug>(quickhl-manual-reset)
+nmap <leader>m <Plug>(quickhl-manual-reset)
+xmap <leader>m <Plug>(quickhl-manual-reset)
+
 Plug 'simeji/winresizer'
 let g:winresizer_start_key='<c-s>'
 let g:winresizer_vert_resize = 3
@@ -460,9 +467,9 @@ nnoremap L gt
 nnoremap H gT
 " }}}
 " vimrc {{
-nnoremap <space>. :e ~/.config/nvim/init.vim<cr>
-nnoremap <space>. :tabnew      ~/.config/nvim/init.vim<cr>
-nnoremap <space>? :source ~/.config/nvim/init.vim<cr>
+nnoremap <leader>. :e ~/.config/nvim/init.vim<cr>
+nnoremap <leader>. :tabnew      ~/.config/nvim/init.vim<cr>
+nnoremap <leader>? :source ~/.config/nvim/init.vim<cr>
 nnoremap <c-n> <c-a><c-x>
 nnoremap <leader>n /\d\d\d\d\/\d\d\/\d\d.*\n===<cr>
 " }}
@@ -498,6 +505,5 @@ nmap <space>z :on<cr>
 nmap <cr> za
 " }}}
 " }}}
-"
 
 syntax off
