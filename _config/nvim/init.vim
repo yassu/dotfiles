@@ -61,7 +61,7 @@ Plug 'thaerkh/vim-workspace'
 let g:workspace_autocreate =0
 let g:workspace_autosave_always = 0
 let g:workspace_autosave = 0
-nnoremap <Leader>s :ToggleWorkspace<CR>
+nnoremap <Leader>S :ToggleWorkspace<CR>
 
 Plug 'lambdalisue/gina.vim'
 
@@ -94,11 +94,6 @@ Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'gkjgh/cobalt'
 
 Plug 'robertmeta/nofrils'
-
-Plug 'easymotion/vim-easymotion'
-let g:EasyMotion_do_mapping = 0
-map  <Leader>s <Plug>(easymotion-bd-f)
-nmap <Leader>s <Plug>(easymotion-overwin-f)
 
 Plug 'ntpeters/vim-better-whitespace'
 let g:strip_whitespace_confirm=0
@@ -186,6 +181,9 @@ let Tlist_Show_One_File = 1                         " 現在表示中のファ�
 " let Tlist_Use_Right_Window = 1                    " 右側にtag listのウインドうを表示する
 let Tlist_Exit_OnlyWindow = 1                      " taglistのウインドウだけならVimを閉じる
 map <silent> <leader>t :TlistToggle<CR>      " \lでtaglistウインドウを開いたり閉じたり出来るショートカット
+
+Plug 'AndrewRadev/switch.vim'
+let g:switch_mapping = "<leader>s"
 
 call plug#end()
 
