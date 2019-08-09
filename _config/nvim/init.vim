@@ -167,11 +167,10 @@ vmap a; <Plug>(textobj-multiblock-a)
 vmap i; <Plug>(textobj-multiblock-i)
 
 Plug 't9md/vim-quickhl'
-" カーソル下のハイライトをトグルする
-nmap <leader><space> <Plug>(quickhl-manual-this)
-xmap <leader><space> <Plug>(quickhl-manual-reset)
-nmap <leader>m <Plug>(quickhl-manual-reset)
-xmap <leader>m <Plug>(quickhl-manual-reset)
+nmap <leader>* <Plug>(quickhl-manual-this)
+xmap <leader>* <Plug>(quickhl-manual-this)
+nmap <leader>@ <Plug>(quickhl-manual-reset)
+xmap <leader>@ <Plug>(quickhl-manual-reset)
 
 Plug 'simeji/winresizer'
 let g:winresizer_start_key='<c-s>'
@@ -459,11 +458,12 @@ nnoremap H gT
 nnoremap <leader>. :e ~/.config/nvim/init.vim<cr>
 nnoremap <leader>. :tabnew      ~/.config/nvim/init.vim<cr>
 nnoremap <leader>? :source ~/.config/nvim/init.vim<cr>
+nnoremap <silent><space>h :<c-u>nohlsearch<cr>
 nnoremap <c-n> <c-a><c-x>
 nnoremap <leader>n /\d\d\d\d\/\d\d\/\d\d.*\n===<cr>
 " }}
 " normal mode {{{
-nnoremap <Space>h :<c-u>help<Space>
+nnoremap <space><space> :<c-u>help<Space>
 nnoremap <silent><c-c> o<esc>
 nnoremap <space>w :write<cr>
 nnoremap <space>q :quit<cr>
