@@ -178,6 +178,16 @@ map R <Plug>(operator-replace)
 Plug 'AndrewRadev/switch.vim'
 let g:switch_mapping = "<leader>s"
 
+Plug 'junegunn/fzf', { 'do': './install --all' }
+
+Plug 'junegunn/fzf.vim'
+nnoremap <silent><leader>gf :GFiles<CR>
+nnoremap <silent><leader>gF :GFiles?<CR>
+nnoremap <silent><leader>gb :Buffers<CR>
+nnoremap <silent><leader>gl :BLines<CR>
+nnoremap <silent><leader>gh :History<CR>
+nnoremap <silent><leader>gm :Mark<CR>
+
 call plug#end()
 
 " }}}

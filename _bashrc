@@ -191,3 +191,5 @@ alias chrome='open -a Google\ Chrome'
 alias firefox='open -a Firefox'
 
 export PATH=$PATH:~/.nodebrew/node/v8.2.0/bin/
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
