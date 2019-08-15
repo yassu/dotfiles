@@ -172,6 +172,20 @@ PATH=$JAVA_HOME/bin:$PATH
 
 export XDG_CONFIG_HOME=~/.config
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+export FZF_DEFAULT_OPTS='--exact'
+fvim() {
+  files=$(git ls-files) &&
+  selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
+  nvim $selected_files
+}
+fbr() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
 alias py='python'
 alias ipy='ipython'
 alias py3='python3'
@@ -192,4 +206,3 @@ alias firefox='open -a Firefox'
 
 export PATH=$PATH:~/.nodebrew/node/v8.2.0/bin/
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
