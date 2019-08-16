@@ -112,8 +112,8 @@ let g:jekyll_post_template = [
 
 Plug 'cocopon/vaffle.vim'
 let g:vaffle_show_hidden_files = 1
-nnoremap <leader>f :Vaffle<cr>
-nnoremap <leader>F :tabnew<cr>:Vaffle<cr>
+nnoremap <leader>v :Vaffle<cr>
+nnoremap <leader>V :tabnew<cr>:Vaffle<cr>
 
 Plug 'w0rp/ale'
 let g:ale_linters = {
@@ -129,9 +129,6 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
 autocmd FileType python,python.test nnoremap <leader>a :ALEToggle<cr>
-
-Plug 'ctrlpvim/ctrlp.vim'
-nnoremap <leader>M :<C-u>CtrlPMRUFiles<CR>
 
 Plug 'thinca/vim-template'
 function! s:loaded_plugin_template()
@@ -183,10 +180,8 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap <silent><leader>gf :GFiles<CR>
 nnoremap <silent><leader>gF :GFiles?<CR>
-nnoremap <silent><leader>gb :Buffers<CR>
-nnoremap <silent><leader>gl :BLines<CR>
-nnoremap <silent><leader>gh :History<CR>
-nnoremap <silent><leader>gm :Mark<CR>
+nnoremap <silent><leader>fm :History<CR>
+nnoremap <silent><leader>fl :BLines<CR>
 
 call plug#end()
 
