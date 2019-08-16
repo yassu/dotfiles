@@ -182,9 +182,13 @@ fcd() {
   cd "$dir"
 }
 fvim() {
-  files=$(git ls-files) &&
-  selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
-  nvim $selected_files
+  if test -z $(git rev-parse --git-dir 2> /dev/null); then
+      nvim $(fzf)
+  else
+    files=$(git ls-files) &&
+    selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
+    nvim $selected_files
+  fi
 }
 fbr() {
   local branches branch
