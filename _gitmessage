@@ -1,14 +1,15 @@
 
 
+
 # ==== Emojis ====
-# ➕  :heavy_plus_sign:  when adding feature
-# ➖  :heavy_minus_sign: when removing feature
-# 🎨  :art:              when improving the format/structure of the code
-# 🚀  :rocket:           when improving performance
-# 💡  :bulb:             new idea
-# ✏️   :pencil2:          when writing docs
-# 🐛  :bug:              when fixing a bug
-# 🔒  :lock:             when dealing with security
+# ➕  plus       :heavy_plus_sign:  when adding feature
+# ➖  minus      :heavy_minus_sign: when removing feature
+# 🎨  art        :art:              when improving the format/structure of the code
+# 🚀  speed      :rocket:           when improving performance
+# 💡  idea       :bulb:             new idea
+# ✏️   doc        :pencil2:          when writing docs
+# 🐛  bug        :bug:              when fixing a bug
+# 🔒  security   :lock:             when dealing with security
 
 # ==== Format ====
 # :emoji: Subject
