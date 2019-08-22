@@ -64,6 +64,11 @@ let g:workspace_autosave = 0
 nnoremap <Leader>S :ToggleWorkspace<CR>
 
 Plug 'lambdalisue/gina.vim'
+command! -nargs=* Gadd :Gina add <args>
+command! -nargs=* Gbr :Gina branch <args>
+command! -nargs=* Gco :Gina commit <args>
+command! -nargs=* Gsta :Gina status <args>
+command! -nargs=* Gcout :Gina checkout <args>
 
 Plug 'vim-jp/vimdoc-ja'
 set helplang=ja,en
