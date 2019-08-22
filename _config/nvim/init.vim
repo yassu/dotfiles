@@ -68,6 +68,8 @@ command! -nargs=* Gadd :Gina add <args>
 command! -nargs=* Gbr :Gina branch <args>
 command! -nargs=* Gco :Gina commit <args>
 command! -nargs=* Gdiff :Gina diff <args>
+command! -nargs=* Glog :Gina log <args>
+command! -nargs=* Gglog :Gina log --graph --oneline <args>
 command! -nargs=* Gsta :Gina status <args>
 command! -nargs=* Gcout :Gina checkout <args>
 
