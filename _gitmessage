@@ -1,21 +1,15 @@
-
+🎨 gitmessageを整理
 
 
 # ==== Emojis ====
 # ➕  :heavy_plus_sign:  when adding feature
 # ➖  :heavy_minus_sign: when removing feature
-# ✅  :white_check_mark: when adding tests
-# 🐛  :bug:              when fixing a bug
-# ⬆️   :arrow_up:         when upgrading dependencies
-# ⬇️   :arrow_down:       when downgrading dependencies
-# 🔈  :speaker:          when adding logging
-# 🔇  :mute:             when reducing logging
 # 🎨  :art:              when improving the format/structure of the code
 # 🚀  :rocket:           when improving performance
-# 🔒  :lock:             when dealing with security
-# ✏️   :pencil2:          when writing docs
 # 💡  :bulb:             new idea
-# 🚧  :construction:     work in progress
+# ✏️   :pencil2:          when writing docs
+# 🐛  :bug:              when fixing a bug
+# 🔒  :lock:             when dealing with security
 
 # ==== Format ====
 # :emoji: Subject
