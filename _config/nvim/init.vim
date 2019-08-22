@@ -186,7 +186,7 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 nnoremap <silent><leader>gf :GFiles<CR>
 nnoremap <silent><leader>gF :GFiles?<CR>
-nnoremap <silent><leader>fm :History<CR>
+nnoremap <silent><leader>fh :History<CR>
 nnoremap <silent><leader>fl :BLines<CR>
 
 call plug#end()
