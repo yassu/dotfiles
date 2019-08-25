@@ -11,19 +11,13 @@
 [color]
     ui = true
 [alias]
-  see = browse
-  wdiff = diff --color-words --ignore-all-space
   sta = status
-  com = commit
-  coma = commit --amend
-  bra = branch
+  co = commit
+  br = branch
+  fbr = branch $(fzf)
   cout = checkout
-  res = reset
-  a = add
-  d = diff
   glog = log --graph --oneline
   rem=remote
-
 [difftool.latex]
     cmd = latexdiff -e utf-8 "$LOCAL" "$REMOTE"
 
