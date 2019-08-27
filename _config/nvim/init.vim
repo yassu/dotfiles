@@ -161,6 +161,7 @@ Plug 'vim-scripts/python_fold'
 Plug 'lucapette/vim-textobj-underscore'
 
 Plug 'osyo-manga/vim-textobj-multiblock'
+let g:textobj_multiblock_blocks = [["`", "`"]]
 omap a; <Plug>(textobj-multiblock-a)
 omap i; <Plug>(textobj-multiblock-i)
 vmap a; <Plug>(textobj-multiblock-a)
