@@ -199,6 +199,8 @@ nnoremap <silent><leader>gF :GFiles?<CR>
 nnoremap <silent><leader>fh :History<CR>
 nnoremap <silent><leader>fl :BLines<CR>
 
+Plug 'rhysd/committia.vim'
+
 call plug#end()
 
 " }}}
