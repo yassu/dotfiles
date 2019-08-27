@@ -1,9 +1,29 @@
 #!/bin/sh
 
+if [ ! -e "/usr/local/bin/brew" ]; then
+    `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+fi
+brew upgrade
+brew install git tmux neovim
+
 # install git-completion.bash
-if [ -e "~/.git-completion.bash" ]; then
-    cmd="curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash"
-    `$cmd`
+if [ ! -e "${HOME}/.git-completion.bash" ]; then
+    echo "Install git-completion"
+    `curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash`
+fi
+
+# install pyenv
+if [ ! -e "${HOME}/.pyenv" ]; then
+    echo "Install pyenv"
+
+    `git clone git://github.com/yyuu/pyenv.git ~/.pyenv`
+    `git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv`
+    `~/.pyenv/plugins/python-build/install.sh`
+    py_new_version=`pyenv install -l | egrep "^\s*\d.\d.\d$" | tail -n 1`
+    `pyenv install ${py_new_version}`
+    `pyenv global ${py_new_version}`
+    `pip install --upgrade pip`
+    `pip install neovim`
 fi
 
 dot_files=`find . -name "_*" -maxdepth 1`
