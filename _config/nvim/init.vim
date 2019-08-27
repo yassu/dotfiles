@@ -136,6 +136,7 @@ let g:ale_fixers = {
 \ 'ruby': ['rubocop'],
 \ 'python': ['black', 'isort'],
 \}
+let g:ale_python_auto_pipenv = 1
 let g:ale_fix_on_save = 1
 
 let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
