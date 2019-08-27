@@ -163,6 +163,8 @@ alias clock='my_clock'
 
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
+export PYENV_ROOT="$HOME/.pyenv"
+export PIPENV_PYTHON="$PYENV_ROOT/shims/python"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
