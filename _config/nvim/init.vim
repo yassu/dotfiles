@@ -1,5 +1,5 @@
-scriptencoding utf-8
 set encoding=utf-8
+scriptencoding utf-8
 set fileencodings=utf-8,euc-jp,iso-2022-jp,sjis
 
 let mapleader = "\<Space>"
@@ -9,7 +9,10 @@ let mapleader = "\<Space>"
 if empty(glob('~/.local/share/nvim/plugged'))
   silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  augroup Setting-PlugInstall
+      autocmd!
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  augroup END
 endif
 
 " 導入Ref: http://txtbokwrm.hatenablog.com/entry/2018/08/06/165041
@@ -55,7 +58,7 @@ if !exists('g:tcomment_types')
     let g:tcomment_types = {}
 endif
 let g:tcomment_types['plantuml']="' %s"
-let g:tcomment_types['toml']="# %s"
+let g:tcomment_types['toml']='# %s'
 
 Plug 'thaerkh/vim-workspace'
 let g:workspace_autocreate =0
@@ -131,6 +134,7 @@ let g:ale_linters = {
 \   'tex': ['textlint'],
 \   'markdown': ['textlint'],
 \   'css': ['stylelint'],
+\   'vim': ['vint'],
 \}
 let g:ale_fixers = {
 \ 'ruby': ['rubocop'],
@@ -143,7 +147,6 @@ let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
-autocmd FileType python nnoremap <leader>a :ALEToggle<cr>
 " }}}
 
 Plug 'thinca/vim-template'
@@ -152,15 +155,22 @@ function! s:loaded_plugin_template()
 \  |   execute 'normal! "_da>'
 \  | endif
 endfunction
-autocmd User plugin-template-loaded call s:loaded_plugin_template()
+augroup Setting-UserTemplateLoaded
+    autocmd!
+    autocmd User plugin-template-loaded call s:loaded_plugin_template()
+augroup END
 
 Plug 'nathanaelkane/vim-indent-guides'
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=white
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=white
+augroup Setting-IndentGuide
+    autocmd!
+
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black ctermbg=white
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=black ctermbg=white
+augroup END
 
 Plug 'thinca/vim-ft-markdown_fold'
 
@@ -169,7 +179,7 @@ Plug 'vim-scripts/python_fold'
 Plug 'lucapette/vim-textobj-underscore'
 
 Plug 'osyo-manga/vim-textobj-multiblock'
-let g:textobj_multiblock_blocks = [["`", "`"]]
+let g:textobj_multiblock_blocks = [['`', '`']]
 omap a; <Plug>(textobj-multiblock-a)
 omap i; <Plug>(textobj-multiblock-i)
 vmap a; <Plug>(textobj-multiblock-a)
@@ -190,7 +200,7 @@ Plug 'kana/vim-operator-replace'
 map R <Plug>(operator-replace)
 
 Plug 'AndrewRadev/switch.vim'
-let g:switch_mapping = "<leader>s"
+let g:switch_mapping = '<leader>s'
 
 Plug 'junegunn/fzf', { 'do': './install --all' }
 
@@ -211,23 +221,27 @@ colorscheme desert
 highlight CursorLine cterm=None
 
 " filetype {{{
-autocmd BufWinEnter,BufNewFile SConstruct set filetype=python
-autocmd BufNewFile,BufRead *.tex  setfiletype tex
-autocmd BufNewFile,BufRead *.py  setfiletype python
-autocmd BufNewFile,BufRead *.go  setfiletype go
-autocmd BufNewFile,BufRead *.scala  setfiletype scala
-autocmd BufNewFile,BufRead *.sage setfiletype python
-autocmd BufNewFile,BufRead *.markdown setfiletype markdown
-autocmd BufNewFile,BufRead *.plant setfiletype plantuml
-autocmd BufNewFile,BufRead *.puml setfiletype plantuml
-autocmd BufNewFile,BufRead *.iuml setfiletype plantuml
-autocmd BufNewFile,BufRead *.uml setfiletype plantuml
-autocmd BufNewFile,BufRead *.diag setfiletype blockdiag
-autocmd BufNewFile,BufRead *.max setfiletype maxima
-autocmd BufNewFile,BufRead *.gnu setfiletype gnuplot
-autocmd BufNewFile,BufRead *.md setfiletype markdown
-autocmd BufNewFile,BufRead *.mkd setfiletype markdown
-autocmd BufNewFile,BufRead *.toml setfiletype toml
+augroup Setting-Filetype
+    autocmd!
+
+    autocmd BufWinEnter,BufNewFile SConstruct set filetype=python
+    autocmd BufNewFile,BufRead *.tex  setfiletype tex
+    autocmd BufNewFile,BufRead *.py  setfiletype python
+    autocmd BufNewFile,BufRead *.go  setfiletype go
+    autocmd BufNewFile,BufRead *.scala  setfiletype scala
+    autocmd BufNewFile,BufRead *.sage setfiletype python
+    autocmd BufNewFile,BufRead *.markdown setfiletype markdown
+    autocmd BufNewFile,BufRead *.plant setfiletype plantuml
+    autocmd BufNewFile,BufRead *.puml setfiletype plantuml
+    autocmd BufNewFile,BufRead *.iuml setfiletype plantuml
+    autocmd BufNewFile,BufRead *.uml setfiletype plantuml
+    autocmd BufNewFile,BufRead *.diag setfiletype blockdiag
+    autocmd BufNewFile,BufRead *.max setfiletype maxima
+    autocmd BufNewFile,BufRead *.gnu setfiletype gnuplot
+    autocmd BufNewFile,BufRead *.md setfiletype markdown
+    autocmd BufNewFile,BufRead *.mkd setfiletype markdown
+    autocmd BufNewFile,BufRead *.toml setfiletype toml
+augroup END
 " }}}
 
 " system {{{
@@ -342,6 +356,7 @@ augroup Setting-Python
   autocmd FileType python setlocal tabstop=4
   autocmd FileType python setlocal softtabstop=4
   autocmd FileType python setlocal shiftwidth=4
+  autocmd FileType python nnoremap <leader>a :ALEToggle<cr>
 augroup END
 " }}}
 
@@ -514,6 +529,9 @@ nnoremap <silent>d\ d$
 nnoremap <silent>D  ^d$
 nnoremap <silent>c$ d$a
 nnoremap <silent>c\ c$
+
+nnoremap [q :cprevious<CR>   " 前へ
+nnoremap ]q :cnext<CR>       " 次へ
 
 nmap <space>l :set list!<cr>
 nmap <space>z :on<cr>
