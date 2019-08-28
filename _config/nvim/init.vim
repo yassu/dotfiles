@@ -143,7 +143,7 @@ let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
-autocmd FileType python,python.test nnoremap <leader>a :ALEToggle<cr>
+autocmd FileType python nnoremap <leader>a :ALEToggle<cr>
 
 Plug 'thinca/vim-template'
 function! s:loaded_plugin_template()
@@ -211,7 +211,6 @@ highlight CursorLine cterm=None
 
 " filetype {{{
 autocmd BufWinEnter,BufNewFile SConstruct set filetype=python
-autocmd BufWinEnter,BufNewFile *test*.py set filetype=python.test
 autocmd BufNewFile,BufRead *.tex  setfiletype tex
 autocmd BufNewFile,BufRead *.py  setfiletype python
 autocmd BufNewFile,BufRead *.go  setfiletype go
@@ -337,11 +336,11 @@ augroup END
 augroup Setting-Python
   autocmd!
 
-  autocmd FileType python,python.test setlocal textwidth=99
-  autocmd FileType python,python.test setlocal colorcolumn=100
-  autocmd FileType python,python.test setlocal tabstop=4
-  autocmd FileType python,python.test setlocal softtabstop=4
-  autocmd FileType python,python.test setlocal shiftwidth=4
+  autocmd FileType python setlocal textwidth=99
+  autocmd FileType python setlocal colorcolumn=100
+  autocmd FileType python setlocal tabstop=4
+  autocmd FileType python setlocal softtabstop=4
+  autocmd FileType python setlocal shiftwidth=4
 augroup END
 " }}}
 
