@@ -1,10 +1,9 @@
 #!/bin/sh
 
-if [ ! -e "/usr/local/bin/brew" ]; then
-    `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
-fi
+## このスクリプトを動かす前にbrewとgitをインストールしておくこと
+
 brew upgrade
-brew install git tmux neovim
+brew install tmux neovim
 
 # install git-completion.bash
 if [ ! -e "${HOME}/.git-completion.bash" ]; then
