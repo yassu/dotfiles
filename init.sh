@@ -22,7 +22,7 @@ if [ ! -e "${HOME}/.pyenv" ]; then
     `pyenv install ${py_new_version}`
     `pyenv global ${py_new_version}`
     `pip install --upgrade pip`
-    `pip install neovim`
+    `pip install neovim vim-vint`
 fi
 
 dot_files=`find . -name "_*" -maxdepth 1`
