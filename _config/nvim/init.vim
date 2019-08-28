@@ -123,7 +123,7 @@ let g:vaffle_show_hidden_files = 1
 nnoremap <leader>v :Vaffle<cr>
 nnoremap <leader>V :tabnew<cr>:Vaffle<cr>
 
-Plug 'w0rp/ale'
+Plug 'w0rp/ale' " {{{
 let g:ale_linters = {
 \   'javascript': ['eslint', 'eslint-plugin-vue'],
 \   'python': ['pyflakes', 'flake8', 'pep8'],
@@ -144,6 +144,7 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 nmap <silent> <C-n> <Plug>(ale_next_wrap)
 autocmd FileType python nnoremap <leader>a :ALEToggle<cr>
+" }}}
 
 Plug 'thinca/vim-template'
 function! s:loaded_plugin_template()
