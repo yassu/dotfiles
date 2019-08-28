@@ -146,7 +146,7 @@ let g:ale_fix_on_save = 1
 let g:ale_statusline_format = ['E%d', 'W%d', 'ok']
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-nmap <silent> <C-n> <Plug>(ale_next_wrap)
+nnoremap <silent> <C-n> <Plug>(ale_next_wrap)
 " }}}
 
 Plug 'thinca/vim-template'
@@ -187,9 +187,9 @@ vmap a; <Plug>(textobj-multiblock-a)
 vmap i; <Plug>(textobj-multiblock-i)
 
 Plug 't9md/vim-quickhl'
-nmap <leader>* <Plug>(quickhl-manual-this)
+nnoremap <leader>* <Plug>(quickhl-manual-this)
 xmap <leader>* <Plug>(quickhl-manual-this)
-nmap <leader>@ <Plug>(quickhl-manual-reset)
+nnoremap <leader>@ <Plug>(quickhl-manual-reset)
 xmap <leader>@ <Plug>(quickhl-manual-reset)
 
 Plug 'simeji/winresizer'
@@ -534,9 +534,9 @@ nnoremap <silent>c\ c$
 nnoremap [q :cprevious<CR>   " 前へ
 nnoremap ]q :cnext<CR>       " 次へ
 
-nmap <space>l :set list!<cr>
-nmap <space>z :on<cr>
-nmap <cr> za
+nnoremap <space>l :set list!<cr>
+nnoremap <space>z :on<cr>
+nnoremap <cr> za
 " }}}
 " }}}
 
