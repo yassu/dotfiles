@@ -129,7 +129,7 @@ nnoremap <leader>V :tabnew<cr>:Vaffle<cr>
 Plug 'w0rp/ale' " {{{
 let g:ale_linters = {
 \   'javascript': ['eslint', 'eslint-plugin-vue'],
-\   'python': ['pyflakes', 'flake8', 'pep8'],
+\   'python': ['black', 'isort'],
 \   'ruby': ['rubocop'],
 \   'tex': ['textlint'],
 \   'markdown': ['textlint'],
